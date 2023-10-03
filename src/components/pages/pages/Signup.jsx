@@ -54,10 +54,10 @@ function SignUpForm() {
       <p>or sign up with</p>
       <div className="social-buttons">
         <button className="social-button">
-            <i className="fa fa-google"></i> Sign Up with Google
+            <i className="fa fa-google"></i>
         </button>
         <button className="social-button">
-            <i className="fa fa-facebook"></i> Sign Up with Facebook
+            <i className="fa fa-facebook"></i> 
         </button>
         </div>
 

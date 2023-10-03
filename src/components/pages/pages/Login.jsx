@@ -33,17 +33,18 @@ function LoginPage() {
         />
       </div>
       <div className="form-group">
-        <label>
-          <input
+        <div className="checkbox">
+            <input
             type="checkbox"
             checked={rememberMe}
             onChange={() => setRememberMe(!rememberMe)}
-          />
-          Remember me?
-        </label>
-      </div>
+            />
+        </div>
+        <div className="checkbox-label">Remember me?</div>
+        </div>
+
       <button onClick={handleLogin}>Login</button>
-      <p>Forgot password?</p>
+      <p><a href="/login">Forgot password?</a></p>
     </div>
   );
 }

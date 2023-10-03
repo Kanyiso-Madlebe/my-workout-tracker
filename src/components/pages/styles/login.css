@@ -5,7 +5,12 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
+    
   }
+
+.login-container h2 {
+    text-align: center;
+}
   
   .form-group {
     margin-bottom: 15px;
@@ -18,22 +23,34 @@
   
   input[type="text"],
   input[type="password"] {
-    width: 100%;
+    width: 95%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 3px;
   }
   
   button {
-    background-color: #007bff;
+    background-color: #007bffa6;
     color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 3px;
     cursor: pointer;
+    width: 100%;
   }
   
   button:hover {
-    background-color: #0056b3;
+    background-color: #0057b3b7;
+  }
+  .checkbox {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px; /* Adjust as needed */
   }
   
+  .checkbox-label {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 12px;
+    font-size: 12px;
+  }
