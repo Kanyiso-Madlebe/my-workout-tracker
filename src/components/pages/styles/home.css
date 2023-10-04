@@ -1,3 +1,18 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+/* Apply a full-width background to the body */
+body {
+  background-color: #28273C;
+  color: #fff;     
+  font-family: Arial, sans-serif; /* Change the font as needed */
+}
+
+/* Style the header */
 .header {
   display: flex;
   flex-direction: column;
@@ -7,6 +22,7 @@
   width: 100%;
   background: #28273C;
   color: #fff;
+  box-sizing: border-box; /* Ensure padding is included in width */
 }
 
 .logo {
@@ -26,7 +42,7 @@
   border-radius: 12px;
   width: 300px;
   color: #000;
-  height: 150px;
+  height: 120px;
   resize: both;
   overflow: auto;
   display: flex;
@@ -34,6 +50,7 @@
   justify-content: center; /* Center content vertically */
   align-items: center; /* Center content horizontally */
   margin-top: 20px; /* Add some space between the container and buttons */
+  position: relative;
 }
 
 .container-content {
@@ -92,4 +109,20 @@
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.container::before {
+  content: '';
+  width: 100%; /* Make the line span the container's width */
+  height: 1px; /* Set the height of the line */
+  background-color: #000; /* Set the color of the line */
+  position: absolute;
+  top: 65%; /* Position the line in the middle of the container */
+  transform: translateY(-50%);
+}
+
+/* Prevent horizontal scrolling on smaller screens */
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%; /* Limit the container width on smaller screens */
+  }
 }

@@ -27,7 +27,6 @@ function Header() {
       <p className="slogan">Track Your Gains, Train Your Way!</p>
       <div className="container">
         <p>Hi!</p>
-        <hr />
         <p>We're thrilled to see you</p>
         <p>Enjoy...</p>
       </div>
