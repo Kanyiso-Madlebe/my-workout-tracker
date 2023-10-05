@@ -9,8 +9,6 @@ function LoginPage() {
   const [isPopupVisible, setIsPopupVisible] = useState(true);
 
   const handleLogin = () => {
-    // You can add your authentication logic here.
-    // For this example, we'll simply display the entered email and password.
     alert(`Email: ${email}\nPassword: ${password}\nRemember Me: ${rememberMe}`);
   };
 
@@ -27,7 +25,7 @@ function LoginPage() {
     <div className="login-container">
       <>
         <button className="exit-button" onClick={handleExit}>
-          x
+          x     
         </button>
         <h2>Login</h2>
         <p>Enter your details below:</p>
@@ -66,3 +64,4 @@ function LoginPage() {
 }
 
 export default LoginPage;
+      
