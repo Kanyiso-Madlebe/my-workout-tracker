@@ -83,8 +83,8 @@ body {
 
 .login-button:hover,
 .signup-button:hover {
-  background-color: #000;
-  color: #fff;
+  background-color: #b6adad;
+  color: #000;
 }
 
 .login-page {
