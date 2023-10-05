@@ -1,31 +1,37 @@
 import React, { useState } from 'react';
 import '../styles/login.css';
 import Home from '../pages/Home';
+import Menu from '../pages/Menu'; // Correct the import path
 
 function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
-  const [isPopupVisible, setIsPopupVisible] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLogin = () => {
-    alert(`Email: ${email}\nPassword: ${password}\nRemember Me: ${rememberMe}`);
+    // Perform your login logic here (e.g., check credentials)
+    // For now, let's simulate a successful login after 2 seconds
+    setTimeout(() => {
+      alert(`Email: ${email}\nPassword: ${password}\nRemember Me: ${rememberMe}`);
+      setIsLoggedIn(true); // Set the login status to true
+    }, 2000);
   };
 
   const handleExit = () => {
     setIsPopupVisible(false); // Close the popup when "X" is clicked
   };
 
-  // Render nothing if isPopupVisible is false
-  if (!isPopupVisible) {
-    return null;
+  // Render the Menu component when isLoggedIn is true
+  if (isLoggedIn) {
+    return <Menu />;
   }
 
   return (
     <div className="login-container">
       <>
         <button className="exit-button" onClick={handleExit}>
-          x     
+          X
         </button>
         <h2>Login</h2>
         <p>Enter your details below:</p>
@@ -64,4 +70,4 @@ function LoginPage() {
 }
 
 export default LoginPage;
-      
+ 
