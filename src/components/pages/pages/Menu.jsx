@@ -27,7 +27,7 @@ function Navbar() {
 
   return (
     <div>
-      <nav className="navbar">
+      <nav className="navbar" id='menu'>
         <ul>
           <li>
             <a href="/" onClick={toggleArrowDirection}>

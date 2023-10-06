@@ -2,17 +2,15 @@ body, html {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow-x: hidden; /* Hide horizontal scrollbar */
+  overflow-x: hidden;
 }
 
-/* Apply a full-width background to the body */
 body {
   background-color: #28273C;
-  color: #fff;     
-  font-family: Arial, sans-serif; /* Change the font as needed */
+  color: #fff;
+  font-family: Arial, sans-serif;
 }
 
-/* Style the header */
 .header {
   display: flex;
   flex-direction: column;
@@ -22,7 +20,7 @@ body {
   width: 100%;
   background: #28273C;
   color: #fff;
-  box-sizing: border-box; /* Ensure padding is included in width */
+  box-sizing: border-box;
 }
 
 .logo {
@@ -37,8 +35,8 @@ body {
 }
 
 .container {
-  background-color: #fff; /* Set the background color to a light gray */
-  padding: 20px; /* Add padding around the content */
+  background-color: #fff;
+  padding: 20px;
   border-radius: 12px;
   width: 300px;
   color: #000;
@@ -47,44 +45,46 @@ body {
   overflow: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center content vertically */
-  align-items: center; /* Center content horizontally */
-  margin-top: 20px; /* Add some space between the container and buttons */
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
   position: relative;
 }
 
 .container-content {
-  width: 100%; /* Make sure the content expands to fill the container */
+  width: 100%;
 }
 
 .container p {
-  margin: 10px 0; /* Add some vertical spacing between the paragraphs */
+  margin: 10px 0;
 }
 
 .buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center buttons horizontally */
-  margin-top: 20px;
+  display: block; /* Change from flex-direction: column; to display: block; */
+  text-align: center; /* Center align the buttons */
+  margin-top: 40px;
+  
 }
 
-.login-button,
-.signup-button {
+.button1,
+.button2 {
   padding: 10px 20px;
-  margin: 5px;
+  margin: 5px 0; /* Add margin to create space between buttons */
   background-color: #fff;
   color: #000;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s; /* Smooth transition for button hover */
+  transition: background-color 0.3s;
   width: 150px;
   border-radius: 5px;
+  display: block; /* Change to display: block; to stack buttons vertically */
+  text-align: center; /* Center align the text within buttons */
 }
 
-.login-button:hover,
-.signup-button:hover {
-  background-color: #b6adad;
-  color: #000;
+.button1:hover,
+.button2:hover {
+  background-color: #b6adad18;
+  color: #fff;
 }
 
 .login-page {
@@ -110,19 +110,19 @@ body {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+
 .container::before {
   content: '';
-  width: 100%; /* Make the line span the container's width */
-  height: 1px; /* Set the height of the line */
-  background-color: #000; /* Set the color of the line */
+  width: 100%;
+  height: 1px;
+  background-color: #000;
   position: absolute;
-  top: 65%; /* Position the line in the middle of the container */
+  top: 65%;
   transform: translateY(-50%);
 }
 
-/* Prevent horizontal scrolling on smaller screens */
 @media (max-width: 768px) {
   .container {
-    max-width: 100%; /* Limit the container width on smaller screens */
+    max-width: 100%;
   }
 }
