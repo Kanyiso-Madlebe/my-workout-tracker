@@ -84,7 +84,7 @@ function LoginPage() {
 
         <Link
           to="/menu"
-          className="login-button"
+          className="login-button" // Remove the width and margin-top properties
           onClick={handleLogin}
         >
           Login

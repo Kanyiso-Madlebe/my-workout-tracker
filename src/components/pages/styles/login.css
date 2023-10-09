@@ -6,22 +6,11 @@
   border-radius: 5px;
   background-color: #fff;
   color: #000;
-  position: fixed; /* Change from absolute to fixed */
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.popup {
-  position: absolute;
-  top: 50px;
-  left: 50px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 2; /* Add a higher z-index value to make it appear on top */
 }
 
 .exit-button {
@@ -73,6 +62,7 @@
   vertical-align: middle;
   margin-bottom: 12px;
   font-size: 12px;
+  margin-right: 35vh;
 }
 
 .login-button {
@@ -81,13 +71,10 @@
   color: #fff;
   padding: 10px 20px;
   border: none;
-  border-radius: 3px;
+  border-radius: 5px; /* Increase border radius for a better look */
   cursor: pointer;
-  width: 100%;
-  margin-top: 20px;
   text-align: center;
-  text-decoration: none; /* Remove underlines for Link component */
-  
+  text-decoration: none;
 }
 
 .login-button:hover {
