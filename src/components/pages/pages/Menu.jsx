@@ -98,9 +98,32 @@ function Navbar() {
           Reset
         </button>
       </div>
+      <div className="image-category">
+        <div className="category-heading">
+          Category
+          <i className="fas fa-image category-icon"></i>
+        </div>
+        <div className="image-container">
+      <img
+        src="src/components/pages/images/KM-logo.png" 
+        alt="Image 1"
+        onClick={() => handleImageClick(1)}
+      />
+      <img
+        src="src/components/pages/images/KM-logo.png" 
+        alt="Image 2"
+        onClick={() => handleImageClick(2)} 
+      />
+      <img
+        src="src/components/pages/images/KM-logo.png" 
+        alt="Image 3"
+        onClick={() => handleImageClick(3)} 
+      />
+    </div>
+
+      </div>
     </div>
   );
-  
 }
 
 export default Navbar;
