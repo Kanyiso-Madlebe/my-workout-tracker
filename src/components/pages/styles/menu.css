@@ -237,4 +237,25 @@
     margin-bottom: 20px; 
   }
 }
+/* Style for the navigation button */
+.navigate-button {
+  background-color: #778794;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+  margin-top: 10vh;
+}
+
+.navigate-button:hover {
+  background-color: #080a0cb0; /* Change the color on hover */
+}
+
+.navigate-button:focus {
+  outline: none; /* Remove focus outline on click */
+  border: none;
+}
 

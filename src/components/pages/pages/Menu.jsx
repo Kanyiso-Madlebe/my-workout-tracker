@@ -67,6 +67,19 @@ function Navbar() {
     return `${hours}:${minutes % 60}:${seconds % 60}`;
   };
 
+  const handleImageClick = (imageId) => {
+    // Add your logic here to navigate to another page based on the clicked image
+    // For example, you can use React Router or window.location.href
+    // window.location.href = `/new-page/${imageId}`;
+    console.log(`Navigating to a new page with image id ${imageId}`);
+  };
+
+  const handleNavigateClick = () => {
+    // Add your logic to navigate to another page when the "Navigate" button is clicked
+    // For example, you can use React Router or window.location.href
+    console.log('Navigating to another page');
+  };
+
   return (
     <div>
       <nav className="navbar" id='menu'>
@@ -99,28 +112,32 @@ function Navbar() {
         </button>
       </div>
       <div className="image-category">
-       <u> <div className="category-heading">
-          Category
-          <i className="fas fa-image category-icon"></i>
-        </div></u>
+        <u> 
+          <div className="category-heading">
+            Category
+            <i className="fas fa-image category-icon"></i>
+          </div>
+        </u>
         <div className="image-container">
-      <img
-        src="src/components/pages/images/KM-logo.png" 
-        alt="one" id='one'
-        onClick={() => handleImageClick(1)}
-      />
-      <img
-        src="src/components/pages/images/KM-logo.png" 
-        alt="two" id='two'
-        onClick={() => handleImageClick(2)} 
-      />
-      <img
-        src="src/components/pages/images/KM-logo.png" 
-        alt="three" id='three'
-        onClick={() => handleImageClick(3)} 
-      />
-    </div>
-
+          <img
+            src="src/components/pages/images/KM-logo.png" 
+            alt="one" id='one'
+            onClick={() => handleImageClick(1)}
+          />
+          <img
+            src="src/components/pages/images/KM-logo.png" 
+            alt="two" id='two'
+            onClick={() => handleImageClick(2)} 
+          />
+          <img
+            src="src/components/pages/images/KM-logo.png" 
+            alt="three" id='three'
+            onClick={() => handleImageClick(3)} 
+          />
+        </div>
+        <button className="navigate-button" onClick={() => handleNavigateClick()}>
+  +
+</button>
       </div>
     </div>
   );
