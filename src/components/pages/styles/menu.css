@@ -1,11 +1,5 @@
-/* Style for the welcome text */
-.welcome-text {
-    font-size: 18px;
-    margin-top: 110px;
-    margin-left: 20px; /* Add left margin for spacing */
-  }
+/* Style for texts */
   
-  /* Style for the "Ready to go" text */
   .ready-text {
     font-weight: bold;
     font-size: 16px;
@@ -20,10 +14,10 @@
     padding: 10px;
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Vertically align content */
-    margin-left: 0; /* Remove left margin */
-    margin-right: 0; /* Remove right margin */
-    width: 100%; /* Ensure the navbar spans the entire width */
+    align-items: center; 
+    margin-left: 0; 
+    margin-right: 0;
+    width: 100%;
   }
   
   .navbar ul {
@@ -48,8 +42,7 @@
     flex-wrap: wrap; /* Allow containers to wrap to the next row */
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 3px; /* Add space between containers */
-    min-height: 40vh; /* Increased height */
+    min-height: 20vh; /* Increased height */
     max-width: 100%; /* Decreased maximum width */
     margin-left: 20px; /* Add left margin for spacing */
     margin-right: 20px; /* Add right margin for spacing */

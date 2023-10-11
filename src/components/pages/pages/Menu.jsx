@@ -36,7 +36,6 @@ function Navbar() {
           </li>
         </ul>
       </nav>
-      <div className="welcome-text">Welcome, [Username]!</div>
       <div className="ready-text"><strong>Ready to go</strong></div>
       <div className="day-container">
         <button className="arrow-left" onClick={prevDays} disabled={currentDay === 0}>&lt;</button>
