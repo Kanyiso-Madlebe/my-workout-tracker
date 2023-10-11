@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/menu.css';
 
 function Navbar() {
@@ -7,6 +8,7 @@ function Navbar() {
   const [startTime, setStartTime] = useState(null);
   const [elapsedTime, setElapsedTime] = useState(0);
   const [timerRunning, setTimerRunning] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to control the menu visibility
 
   useEffect(() => {
     if (timerRunning) {
@@ -18,9 +20,11 @@ function Navbar() {
     }
   }, [timerRunning, startTime]);
 
-  const toggleArrowDirection = () => {
+  const toggleArrowDirection = (e) => {
+    e.preventDefault(); // Prevent the default link behavior
     setIsArrowUp(!isArrowUp);
   };
+  
 
   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
@@ -68,41 +72,69 @@ function Navbar() {
   };
 
   const handleImageClick = (imageId) => {
-    // Add your logic here to navigate to another page based on the clicked image
-    // For example, you can use React Router or window.location.href
-    // window.location.href = `/new-page/${imageId}`;
-    console.log(`Navigating to a new page with image id ${imageId}`);
+    // Your image click handling logic here
   };
 
-  const handleNavigateClick = () => {
-    // Add your logic to navigate to another page when the "Navigate" button is clicked
-    // For example, you can use React Router or window.location.href
-    console.log('Navigating to another page');
+  const handleMenuClick = () => {
+    setIsMenuOpen(!isMenuOpen); // Toggle the menu visibility
   };
 
   return (
     <div>
-      <nav className="navbar" id='menu'>
+      <nav className="navbar" id="menu">
         <ul>
           <li>
-            <a href="/" onClick={toggleArrowDirection}>
+            <a href="/" onClick={handleMenuClick}>
               Menu {isArrowUp ? '▲' : '▼'}
             </a>
           </li>
         </ul>
       </nav>
-      <div className="ready-text"><strong>Ready to go</strong></div>
+
+      {/* Dropdown menu */}
+      {isMenuOpen && (
+        <div className="menu-dropdown">
+          <ul>
+            <li><Link to="/profile">Profile</Link></li>
+            <li><Link to="/home">Home</Link></li>
+            <li><Link to="/workouts">Workouts</Link></li>
+            <li><Link to="/history">History</Link></li>
+            <li><Link to="/goals">Goals</Link></li>
+            <li><Link to="/challenges">Challenges</Link></li>
+            <li><Link to="/nutrition">Nutrition</Link></li>
+            <li><Link to="/sync-connect">Sync/Connect</Link></li>
+            <li><Link to="/upgrade">Upgrade</Link></li>
+            <li><Link to="/faq">FAQ</Link></li>
+            <li><Link to="/terms-privacy">Terms and Privacy</Link></li>
+            <li><Link to="/settings">Settings</Link></li>
+            <li><Link to="/logout">Logout</Link></li>
+          </ul>
+        </div>
+      )}
+
+      <div className="ready-text">
+        <strong>Ready to go</strong>
+      </div>
       <div className="day-container">
-        <button className="arrow-left" onClick={prevDays} disabled={currentDay === 0}>&lt;</button>
+        <button className="arrow-left" onClick={prevDays} disabled={currentDay === 0}>
+          &lt;
+        </button>
         {displayDays.map((day, index) => (
-          <div key={index} className="day">{day}</div>
+          <div key={index} className="day">
+            {day}
+          </div>
         ))}
-        <button className="arrow-right" onClick={nextDays} disabled={currentDay >= days.length - 4}>&gt;</button>
+        <button className="arrow-right" onClick={nextDays} disabled={currentDay >= days.length - 4}>
+          &gt;
+        </button>
       </div>
       <div className="date-time">
         <p>{getCurrentDateTime()}</p>
         <div className="timer-container">
-          <div className={`circle ${timerRunning ? 'active' : ''}`} onClick={timerRunning ? stopTimer : startTimer}>
+          <div
+            className={`circle ${timerRunning ? 'active' : ''}`}
+            onClick={timerRunning ? stopTimer : startTimer}
+          >
             {timerRunning ? 'Stop' : 'Start'}
           </div>
           <p>Elapsed Time: {formatTime(elapsedTime)}</p>
@@ -112,7 +144,7 @@ function Navbar() {
         </button>
       </div>
       <div className="image-category">
-        <u> 
+        <u>
           <div className="category-heading">
             Category
             <i className="fas fa-image category-icon"></i>
@@ -120,24 +152,27 @@ function Navbar() {
         </u>
         <div className="image-container">
           <img
-            src="src/components/pages/images/KM-logo.png" 
-            alt="one" id='one'
-            onClick={() => handleImageClick(1)}
+            src="src/components/pages/images/wa.jpeg"
+            alt="one"
+            id="one"
+            onClick={() => handleImageClick('one')}
+            className="image"
           />
           <img
-            src="src/components/pages/images/KM-logo.png" 
-            alt="two" id='two'
-            onClick={() => handleImageClick(2)} 
+            src="src/components/pages/images/stretch.jpeg"
+            alt="two"
+            id="two"
+            onClick={() => handleImageClick('two')}
+            className="image"
           />
           <img
-            src="src/components/pages/images/KM-logo.png" 
-            alt="three" id='three'
-            onClick={() => handleImageClick(3)} 
+            src="src/components/pages/images/yogayo.jpeg"
+            alt="three"
+            id="three"
+            onClick={() => handleImageClick('three')}
+            className="image"
           />
         </div>
-        <button className="navigate-button" onClick={() => handleNavigateClick()}>
-  +
-</button>
       </div>
     </div>
   );

@@ -1,0 +1,22 @@
+/* progress.css */
+.progress-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .back-arrow {
+    font-size: 24px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-decoration: none;
+    color: #fff; /* Customize the color */
+  }
+  
+  .page-heading {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff; /* Customize the color */
+    margin-top: 20px;
+  }
+  
