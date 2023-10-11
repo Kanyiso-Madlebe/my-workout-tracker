@@ -4,7 +4,7 @@
     font-weight: bold;
     font-size: 16px;
     margin-top: 40px;
-    margin-left: 20px; /* Add left margin for spacing */
+    margin-left: 20px;
   }
   
   /* Style for the navigation bar */
@@ -42,10 +42,10 @@
     flex-wrap: wrap; /* Allow containers to wrap to the next row */
     align-items: center;
     justify-content: space-between;
-    min-height: 20vh; /* Increased height */
-    max-width: 100%; /* Decreased maximum width */
-    margin-left: 20px; /* Add left margin for spacing */
-    margin-right: 20px; /* Add right margin for spacing */
+    min-height: 20vh; 
+    max-width: 100%; 
+    margin-left: 20px; 
+    margin-right: 20px; 
   }
   
   /* Style for individual day boxes */
@@ -55,8 +55,8 @@
     padding: 10px;
     flex: 1;
     text-align: center;
-    color: #000; /* Black text */
-    margin: 3px; /* Add space around individual day boxes */
+    color: #000; 
+    margin: 3px; 
   }
   
   /* Style for navigation arrows */
@@ -80,7 +80,116 @@
   
   @media (max-width: 768px) {
     .day-container {
-      max-width: 100%; /* Limit the container width on smaller screens */
+      max-width: 100%; 
     }
   }
+/* Style for the date and time display */
+.date-time {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 10px; 
+  color: #fff; 
+}
+
+/* Additional styling for better visibility */
+.date-time p {
+  margin: 0;
+}
   
+/* Style for the circular container */
+.timer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #0078d4a9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s;
+}
+
+.circle.active {
+  background-color: #dc143c; /* Change the color when active (timer is running) */
+}
+
+/* Additional styling for better visibility */
+.circle:hover {
+  background-color: #7795aa; /* Change the color on hover */
+}
+
+/* Style for the elapsed time text */
+.timer-container p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #fff;
+}
+
+/* Style for the "Start" and "Stop" buttons */
+.circle:active {
+  transform: scale(0.95); /* Add a pressed effect when clicking */
+}
+/* Style for the circular container */
+.timer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #0078d4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s;
+}
+
+.circle.active {
+  background-color: #dc143c; /* Change the color when active (timer is running) */
+}
+
+/* Style for the Reset button */
+.reset-button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.reset-button:hover {
+  background-color: #444; /* Change the color on hover */
+}
+
+.reset-button:focus {
+  outline: none; /* Remove focus outline on click */
+  border: none;
+}
