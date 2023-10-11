@@ -99,24 +99,24 @@ function Navbar() {
         </button>
       </div>
       <div className="image-category">
-        <div className="category-heading">
+       <u> <div className="category-heading">
           Category
           <i className="fas fa-image category-icon"></i>
-        </div>
+        </div></u>
         <div className="image-container">
       <img
         src="src/components/pages/images/KM-logo.png" 
-        alt="Image 1"
+        alt="one" id='one'
         onClick={() => handleImageClick(1)}
       />
       <img
         src="src/components/pages/images/KM-logo.png" 
-        alt="Image 2"
+        alt="two" id='two'
         onClick={() => handleImageClick(2)} 
       />
       <img
         src="src/components/pages/images/KM-logo.png" 
-        alt="Image 3"
+        alt="three" id='three'
         onClick={() => handleImageClick(3)} 
       />
     </div>

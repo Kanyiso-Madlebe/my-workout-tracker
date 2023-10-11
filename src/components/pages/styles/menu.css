@@ -222,6 +222,10 @@
   cursor: pointer; 
   margin-right: 0; 
 }
+.image-container img{
+  margin: auto;
+  border-radius: 10px;
+}
 
 @media (max-width: 768px) {
   .image-container {
