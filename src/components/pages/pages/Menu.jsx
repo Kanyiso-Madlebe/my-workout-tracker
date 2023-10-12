@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/menu.css';
+import Pic1 from '../images/qata.jpg';
 
 function Navbar() {
   const [isArrowUp, setIsArrowUp] = useState(false);
@@ -24,7 +25,6 @@ function Navbar() {
     e.preventDefault(); // Prevent the default link behavior
     setIsArrowUp(!isArrowUp);
   };
-  
 
   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
@@ -75,7 +75,9 @@ function Navbar() {
     // Your image click handling logic here
   };
 
-  const handleMenuClick = () => {
+  // Updated handleMenuClick function to toggle the menu
+  const handleMenuClick = (e) => {
+    e.preventDefault(); // Prevent the default link behavior
     setIsMenuOpen(!isMenuOpen); // Toggle the menu visibility
   };
 
@@ -85,7 +87,7 @@ function Navbar() {
         <ul>
           <li>
             <a href="/menu" onClick={handleMenuClick}>
-              Menu {isArrowUp ? '▲' : '▼'}
+              Menu {isMenuOpen ? '▲' : '▼'}
             </a>
           </li>
         </ul>
@@ -96,7 +98,6 @@ function Navbar() {
         <div className="menu-dropdown">
           <ul>
             <li><Link to="/profile">Profile</Link></li>
-            <li><Link to="/home">Home</Link></li>
             <li><Link to="/workouts">Workouts</Link></li>
             <li><Link to="/history">History</Link></li>
             <li><Link to="/goals">Goals</Link></li>
@@ -107,14 +108,15 @@ function Navbar() {
             <li><Link to="/faq">FAQ</Link></li>
             <li><Link to="/terms-privacy">Terms and Privacy</Link></li>
             <li><Link to="/settings">Settings</Link></li>
-            <li><Link to="/logout">Logout</Link></li>
+            <li><Link to="/">Logout</Link></li>
           </ul>
         </div>
       )}
 
-      <div className="ready-text">
-        <strong>Ready to go</strong>
-      </div>
+      <div className="ready-text"> 
+      <strong>Ready to go</strong>
+    </div>
+
       <div className="day-container">
         <button className="arrow-left" onClick={prevDays} disabled={currentDay === 0}>
           &lt;
