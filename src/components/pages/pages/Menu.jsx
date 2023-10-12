@@ -84,7 +84,7 @@ function Navbar() {
       <nav className="navbar" id="menu">
         <ul>
           <li>
-            <a href="/" onClick={handleMenuClick}>
+            <a href="/menu" onClick={handleMenuClick}>
               Menu {isArrowUp ? '▲' : '▼'}
             </a>
           </li>
@@ -173,6 +173,10 @@ function Navbar() {
             className="image"
           />
         </div>
+        <br/><br/>
+        <Link to="/progress" className="navigate-button" onClick={() => handleNavigateClick()}>
+          +
+        </Link>
       </div>
     </div>
   );
