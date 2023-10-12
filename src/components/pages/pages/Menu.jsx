@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/menu.css';
-import Pic1 from '../images/qata.jpg';
+import Pic1 from '../images/yogayo.jpeg';
+import Pic2 from '../images/stretch.jpeg';
+import Pic3 from '../images/wa.jpeg';
 
 function Navbar() {
   const [isArrowUp, setIsArrowUp] = useState(false);
@@ -73,6 +75,7 @@ function Navbar() {
 
   const handleImageClick = (imageId) => {
     // Your image click handling logic here
+    console.log(`Clicked on image with id: ${imageId}`);
   };
 
   // Updated handleMenuClick function to toggle the menu
@@ -113,9 +116,9 @@ function Navbar() {
         </div>
       )}
 
-      <div className="ready-text"> 
-      <strong>Ready to go</strong>
-    </div>
+      <div className="ready-text">
+        <strong>Ready to go</strong>
+      </div>
 
       <div className="day-container">
         <button className="arrow-left" onClick={prevDays} disabled={currentDay === 0}>
@@ -130,6 +133,7 @@ function Navbar() {
           &gt;
         </button>
       </div>
+
       <div className="date-time">
         <p>{getCurrentDateTime()}</p>
         <div className="timer-container">
@@ -145,6 +149,7 @@ function Navbar() {
           Reset
         </button>
       </div>
+
       <div className="image-category">
         <u>
           <div className="category-heading">
@@ -154,29 +159,29 @@ function Navbar() {
         </u>
         <div className="image-container">
           <img
-            src="src/components/pages/images/wa.jpeg"
+            src={Pic3}
             alt="one"
             id="one"
             onClick={() => handleImageClick('one')}
             className="image"
           />
           <img
-            src="src/components/pages/images/stretch.jpeg"
+            src={Pic2}
             alt="two"
             id="two"
             onClick={() => handleImageClick('two')}
             className="image"
           />
           <img
-            src="src/components/pages/images/yogayo.jpeg"
+            src={Pic1}
             alt="three"
             id="three"
             onClick={() => handleImageClick('three')}
             className="image"
           />
         </div>
-        <br/><br/>
-        <Link to="/progress" className="navigate-button" onClick={() => handleNavigateClick()}>
+        <br /><br />
+        <Link to="/progress" className="navigate-button">
           +
         </Link>
       </div>
