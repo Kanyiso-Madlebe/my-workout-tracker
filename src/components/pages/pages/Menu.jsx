@@ -139,7 +139,7 @@ function Navbar() {
         <div className="timer-container">
           <div
             className={`circle ${timerRunning ? 'active' : ''}`}
-            onClick={timerRunning ? stopTimer : startTimer}
+            onClick={timerRunning ? stopTimer : startTimer}  
           >
             {timerRunning ? 'Stop' : 'Start'}
           </div>

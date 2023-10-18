@@ -1,101 +1,53 @@
 import React, { useState } from 'react';
 import '../styles/login.css';
-import Menu from '../pages/Menu';
 import { Link } from 'react-router-dom';
 
-function LoginPage() {
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-    rememberMe: false,
-  });
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isPopupVisible, setIsPopupVisible] = useState(false);
-
-  const handleInputChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: type === 'checkbox' ? checked : value,
-    }));
-  };
+function Login() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [rememberMe, setRememberMe] = useState(false);
 
   const handleLogin = () => {
-    // You can perform your login logic here, e.g., make an API call.
-    // For now, let's just simulate a login with a timeout.
-    setTimeout(() => {
-      alert(
-        `Email: ${formData.email}\nPassword: ${formData.password}\nRemember Me: ${formData.rememberMe}`
-      );
-      setIsLoggedIn(true);
-    }, 2000);
-  };
-
-  const handleExit = () => {
-    setIsPopupVisible(false);
-  };
-
-  // if (isLoggedIn) {
-  //   return <Menu />;
-  // }
+    // Add your login logic here
+  }
 
   return (
     <div className="login-container">
-      <>
-        {isPopupVisible && (
-          <div className="popup">
-            <button className="exit-button" onClick={handleExit}>
-              X
-            </button>
-            <p>Popup Content</p>
-          </div>
-        )}
-        <h2>Login</h2>
-        <p>Enter your details below:</p>
-        <div className="form-group">
-          <label>Email:</label>
+      <div className="background-1"></div>
+      <div className="background-2"></div>
+      <div className="login-form">
+        <h2>Enter your details below:</h2>
+        <form>
+          <label>Email</label>
           <input
             type="text"
-            name="email"
-            value={formData.email}
-            onChange={handleInputChange}
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
-        </div>
-        <div className="form-group">
-          <label>Password:</label>
+          <label>Password</label>
           <input
             type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleInputChange}
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
-        </div>
-        <div className="form-group">
-          <div className="checkbox">
+          <div className="remember-me">
             <input
               type="checkbox"
-              name="rememberMe"
-              checked={formData.rememberMe}
-              onChange={handleInputChange}
+              checked={rememberMe}
+              onChange={() => setRememberMe(!rememberMe)}
             />
+            <label>Remember me?</label>
           </div>
-          <div className="checkbox-label">Remember me?</div>
+          <button onClick={handleLogin}>Login</button>
+        </form>
+        <div className="forgot-password">
+          <Link to="/forgot-password">Forgot password?</Link>
         </div>
-
-        <Link
-          to="/menu"
-          className="login-button" // Remove the width and margin-top properties
-          onClick={handleLogin}
-        >
-          Login
-        </Link>
-
-        <p>
-          <a href="/login">Forgot password?</a>
-        </p>
-      </>
+      </div>
     </div>
   );
 }
 
-export default LoginPage;
+export default Login;

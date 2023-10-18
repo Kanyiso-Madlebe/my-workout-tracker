@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import '../styles/signup.css';
 import 'font-awesome/css/font-awesome.min.css';
 
-function SignUpForm() {
+const SignUp = () => {
   const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
     email: '',
     password: '',
   });
 
-  const [isPopupVisible, setIsPopupVisible] = useState(true); // Set to true to initially show the popup
-
-  const handleChange = (e) => {
+  const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -18,68 +18,67 @@ function SignUpForm() {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // You can add your form submission logic here
-    console.log(formData);
+  const handleSignUp = () => {
+    // Handle sign-up logic here
   };
-
-  const handleExit = () => {
-    setIsPopupVisible(false); // Close the popup when "X" is clicked
+  const handleCancel = () => {
+    // Handle cancel logic here
   };
-
-  // Render nothing if isPopupVisible is false
-  if (!isPopupVisible) {
-    return null;
-  }
-
+  
   return (
-    <div className={`login-container ${isPopupVisible ? 'show' : 'hide'}`}>
-      <>
-        <button className="exit-button" onClick={handleExit}>
-          X
-        </button>
-        <h2>Sign Up</h2>
-        <p>
-          Already a member? <a href="/login">Log in</a>
-        </p>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="email">Email:</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="password">Password:</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <button type="submit">Sign Up</button>
-        </form>
-        <p>or sign up with</p>
-        <div className="social-buttons">
-          <button className="social-button">
-            <i className="fa fa-google"></i>
-          </button>
-          <button className="social-button">
-            <i className="fa fa-facebook"></i>
-          </button>
-        </div>
-      </>
+    <div className="signup-container">
+      <div className="close-button">
+        <i className="fa fa-times" onClick={handleCancel}></i>
+      </div>
+      <h2>Create an account</h2>
+      <div className="form-group">
+        <label htmlFor="firstName">First Name</label>
+        <input
+          type="text"
+          name="firstName"
+          id="firstName"
+          value={formData.firstName}
+          onChange={handleInputChange}
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="lastName">Last Name</label>
+        <input
+          type="text"
+          name="lastName"
+          id="lastName"
+          value={formData.lastName}
+          onChange={handleInputChange}
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          value={formData.email}
+          onChange={handleInputChange}
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="password">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          value={formData.password}
+          onChange={handleInputChange}
+        />
+      </div>
+      <button onClick={handleSignUp} type="submit">Sign Up</button>
+      <p>
+        Do you agree with the <a href="/terms">Terms of Service</a> and{' '}
+        <a href="/privacy">Privacy Policy</a>.
+      </p>
+      <button className="have-account-button">Already have an account?</button>
     </div>
   );
-}
+};
 
-export default SignUpForm;
+export default SignUp;
