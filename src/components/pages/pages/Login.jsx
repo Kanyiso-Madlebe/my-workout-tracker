@@ -1,26 +1,45 @@
 import React, { useState } from 'react';
 import '../styles/login.css';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
-
-  const history = useHistory(); // Initialize the history object
+  const [errors, setErrors] = useState({ email: '', password: '' });
 
   const handleLogin = () => {
-    // Check if the login logic is successful (you can add your validation here)
-    if (email && password) {
-      // Navigate to the "/menu" page when the "Login" button is clicked
-      history.push('/menu');
-    } else {
-      // Handle invalid login, show an error message, etc.
+    // Check for validation errors before attempting to log in
+    if (validateForm()) {
+      // Add your login logic here
     }
   }
 
   const handleClose = () => {
     // Add code to close the page or navigate away
+  }
+
+  const validateForm = () => {
+    let valid = true;
+    const newErrors = { email: '', password: '' };
+
+    // Validate email
+    if (!email) {
+      newErrors.email = 'Email is required';
+      valid = false;
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      newErrors.email = 'Email is invalid';
+      valid = false;
+    }
+
+    // Validate password (you can add more criteria here)
+    if (!password) {
+      newErrors.password = 'Password is required';
+      valid = false;
+    }
+
+    setErrors(newErrors);
+    return valid;
   }
 
   return (
@@ -29,24 +48,32 @@ function Login() {
       <div className="background-2"></div>
       <div className="login-form">
         <button className="close-button" onClick={handleClose}>
-          <Link to="/" style={{ color: '#000' }}>X</Link>
+          <Link to="/" style={{ color: '#000' }}>
+            X
+          </Link>
         </button>
-       
+
         <h1>Login</h1>
         <h2>Enter your details below:</h2>
-        <form> 
-          <input
-            type="text"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+        <form>
+          <div className="form-group">
+            <input
+              type="text"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <div className="error-message">{errors.email}</div>
+          </div>
+          <div className="form-group">
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <div className="error-message">{errors.password}</div>
+          </div>
           <div className="remember-me">
             <label>
               <input
@@ -58,7 +85,9 @@ function Login() {
             </label>
           </div>
           <button onClick={handleLogin}>
-            <Link to="/menu" style={{ color: '#fff' }}>Login</Link>
+            <Link to="/menu" style={{ color: '#fff' }}>
+              Login
+            </Link>
           </button>
         </form>
         <div className="forgot-password">
