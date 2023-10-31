@@ -1,5 +1,6 @@
 .login-container {
   display: flex;
+  width: 100%;
   height: 100vh;
   align-items: center;
   justify-content: center;
@@ -17,46 +18,92 @@
     z-index: 2;
   }
 }
+.close-button {
+  position: absolute;
+  top: 10px; /* Adjust the top position as needed */
+  right: 10px; /* Adjust the right position as needed */
+  background: #ccc; /* Background color of the button */
+  color: #000; /* Text color of the button */
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 50%; /* Makes it a circular button */
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.close-button:hover {
+  background: #ccccccb2; /* Background color when hovered */
+}
 
 .login-form {
   background: #fff;
+  width: 100%;
+  height: 80%;
+  margin-bottom: 15vh;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 0 0 20px 20px; /* Set different border-radius values for each corner */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: 3;
   text-align: center;
 }
-
+.login-form h1{
+  font-size: 32px;
+  font-display: bold;
+  color: #000;
+}
 .login-form h2 {
   font-size: 24px;
   margin: 10px 0;
+  margin-top: 30px;
 }
 
+
 .login-form input {
-  width: 100%;
+  width: 97%;
   padding: 10px;
   margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
+  margin-bottom: 40px;
+  justify-content: space-between;
+}
+
+
+.remember-me {
+  margin: 10px 0; /* Add margin to the top and bottom of the "Remember me" section */
+  display: flex;
+  align-items: center;
 }
 
 .remember-me {
   text-align: left;
   margin: 10px 0;
+  margin-right: 160vh;
 }
+
+.remember-me label {
+  display: flex;
+  align-items: center;
+}
+
+.remember-me input[type="checkbox"] {
+  margin-right: 1px;
+}
+
 
 button {
   background: #28273C;
   color: #fff;
+  width: 100%;
+  font-size: large;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-}
-
-button:hover {
-  background: #000;
 }
 
 a {
@@ -64,4 +111,26 @@ a {
   color: #28273C;
   display: block;
   margin-top: 10px;
+}
+.forgot-password{
+  text-align: left;
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+  .login-form {
+    height: 90%; /* Adjust height for smaller screens */
+    border-radius: 0 0 70px 70px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+    text-align: center;
+    margin-bottom: 35px;
+  }
+
+  .login-form input {
+    width: 90%;
+  }
+  button {
+    width: 96%;
+  }
 }

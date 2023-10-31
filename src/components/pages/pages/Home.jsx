@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion'; // Import motion from your animation library
-import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import '../styles/home.css';
-import LoginPage from "./Login";
-import SignUpForm from "./Signup";
+
+// Import your LoginPage and SignUpForm components here
 
 function Header() {
   const [showLogin, setShowLogin] = useState(false);
@@ -21,7 +21,6 @@ function Header() {
 
   return (
     <header className="header">
-      {/* Your header content */}
       <div className="logo">
         <h1>DGC</h1>
       </div>
@@ -38,24 +37,26 @@ function Header() {
           transition={{ duration: 1, delay: 1 }}
           className="buttons-desktop"
         >
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="button1"
-        
-            onClick={toggleLogin}
-          >
-            Login
-          </motion.button>
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="button2"
-  
-            onClick={toggleSignup}
-          >
-            Sign Up
-          </motion.button>
+          <Link to="/login"> {/* Link to the Login page */}
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="button1"
+              onClick={toggleLogin}
+            >
+              Login
+            </motion.button>
+          </Link>
+          <Link to="/signup"> {/* Link to the Sign Up page */}
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="button2"
+              onClick={toggleSignup}
+            >
+              Sign Up
+            </motion.button>
+          </Link>
         </motion.div>
       </div>
 
