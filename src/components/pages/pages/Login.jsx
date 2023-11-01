@@ -47,12 +47,11 @@ function Login() {
       <div className="background-1"></div>
       <div className="background-2"></div>
       <div className="login-form">
-        <button className="close-button" onClick={handleClose}>
-          <Link to="/" style={{ color: '#000' }}>
-            X
-          </Link>
-        </button>
-
+      <div className="close-button">
+        <Link to="/" style={{ color: '#000' }}>
+          <i className="fa fa-times" onClick={handleClose}></i> {/* Use handleClose instead of handleCancel */}
+        </Link>
+      </div>
         <h1>Login</h1>
         <h2>Enter your details below:</h2>
         <form>
@@ -74,16 +73,16 @@ function Login() {
             />
             <div className="error-message">{errors.password}</div>
           </div>
-          <div className="remember-me">
-            <label>
-              <input
-                type="checkbox"
-                checked={rememberMe}
-                onChange={() => setRememberMe(!rememberMe)}
-              />
-              Remember me
-            </label>
-          </div>
+                  <div className="remember-me">
+          <label>
+            <input
+              type="checkbox"
+              checked={rememberMe}
+              onChange={() => setRememberMe(!rememberMe)}
+            />
+          Remember? 
+          </label>
+        </div>
           <button onClick={handleLogin}>
             <Link to="/menu" style={{ color: '#fff' }}>
               Login

@@ -18,30 +18,12 @@
     z-index: 2;
   }
 }
-.close-button {
-  position: absolute;
-  top: 10px; /* Adjust the top position as needed */
-  right: 10px; /* Adjust the right position as needed */
-  background: #ccc; /* Background color of the button */
-  color: #000; /* Text color of the button */
-  width: 30px;
-  height: 30px;
-  border: none;
-  border-radius: 50%; /* Makes it a circular button */
-  cursor: pointer;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.close-button:hover {
-  background: #ccccccb2; /* Background color when hovered */
-}
+
 
 .login-form {
   background: #fff;
-  width: 100%;
+  width: 97%;
   height: 80%;
   margin-bottom: 15vh;
   padding: 20px;
@@ -66,17 +48,11 @@
   width: 97%;
   padding: 10px;
   margin: 10px 0;
-  border: 1px solid #ccc;
+  border: none;
+  border-bottom: 1px solid #3b3a3a;
   border-radius: 5px;
   margin-bottom: 40px;
   justify-content: space-between;
-}
-
-
-.remember-me {
-  margin: 10px 0; /* Add margin to the top and bottom of the "Remember me" section */
-  display: flex;
-  align-items: center;
 }
 
 .remember-me {
@@ -88,17 +64,20 @@
 .remember-me label {
   display: flex;
   align-items: center;
+  margin-left: 12vh;
+  
 }
 
 .remember-me input[type="checkbox"] {
   margin-right: 1px;
+  margin-bottom: 10px;
 }
 
 
 button {
   background: #28273C;
   color: #fff;
-  width: 100%;
+  width: 90%;
   font-size: large;
   padding: 10px 20px;
   border: none;
@@ -114,6 +93,8 @@ a {
 }
 .forgot-password{
   text-align: left;
+  margin-left: 12vh;
+  margin-top: 2vh;
 }
 
 /* Media queries for smaller screens */

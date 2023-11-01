@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/signup.css';
 import 'font-awesome/css/font-awesome.min.css';
 
@@ -21,14 +22,17 @@ const SignUp = () => {
   const handleSignUp = () => {
     // Handle sign-up logic here
   };
+
   const handleCancel = () => {
     // Handle cancel logic here
   };
-  
+
   return (
     <div className="signup-container">
       <div className="close-button">
-        <i className="fa fa-times" onClick={handleCancel}></i>
+        <Link to="/" style={{ color: '#000' }}> {/* Wrap the "Close" button with Link */}
+          <i className="fa fa-times" onClick={handleCancel}></i>
+        </Link>
       </div>
       <h2>Create an account</h2>
       <div className="form-group">
@@ -73,7 +77,7 @@ const SignUp = () => {
       </div>
       <button onClick={handleSignUp} type="submit">Sign Up</button>
       <p>
-        Do you agree with the <a href="/terms">Terms of Service</a> and{' '}
+        <span>Do you agree with the <a href="/terms">Terms of Service</a> and</span>{' '}
         <a href="/privacy">Privacy Policy</a>.
       </p>
       <button className="have-account-button">Already have an account?</button>
@@ -82,4 +86,3 @@ const SignUp = () => {
 };
 
 export default SignUp;
-    

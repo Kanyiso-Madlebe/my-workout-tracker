@@ -1,7 +1,5 @@
 /* menu.css */
 
-/* Style for texts */
-
 .ready-text {
   font-weight: bold;
   font-size: 16px;
@@ -229,8 +227,8 @@
 }
 
 .image-container img:hover {
-  transform: scale(1.1); /* Add a slight scale effect on hover */
-  z-index: 1; /* Bring the image to the front */  z-index: 1; /* Bring the image to the front */
+  transform: scale(1.1); 
+  z-index: 1; 
 }
 /* Style for the navigation button */
 .navigate-button {
@@ -242,13 +240,13 @@
   cursor: pointer;
   border-radius: 50%;
   transition: background-color 0.3s;
-  margin-top: 20px; /* Adjust the margin-top to control the position below the images */
-  z-index: 2; /* Bring the button on top of the image container */
+  margin-top: 20px; 
+  z-index: 2; 
 }
 
 
 .navigate-button:hover {
-  background-color: #080a0cb0; /* Change the color on hover */
+  background-color: #080a0cb0; 
 }
 
 .navigate-button:focus {

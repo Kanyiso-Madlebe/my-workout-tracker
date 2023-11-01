@@ -100,14 +100,7 @@ function Navbar() {
       {isMenuOpen && (
         <div className="menu-dropdown">
           <ul>
-            <li><Link to="/profile">Profile</Link></li>
-            <li><Link to="/workouts">Workouts</Link></li>
             <li><Link to="/history">History</Link></li>
-            <li><Link to="/goals">Goals</Link></li>
-            <li><Link to="/challenges">Challenges</Link></li>
-            <li><Link to="/nutrition">Nutrition</Link></li>
-            <li><Link to="/sync-connect">Sync/Connect</Link></li>
-            <li><Link to="/upgrade">Upgrade</Link></li>
             <li><Link to="/faq">FAQ</Link></li>
             <li><Link to="/terms-privacy">Terms and Privacy</Link></li>
             <li><Link to="/settings">Settings</Link></li>
