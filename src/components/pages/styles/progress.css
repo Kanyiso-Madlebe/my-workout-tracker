@@ -1,8 +1,11 @@
-/* progress.css */
 .progress-container {
   text-align: center;
   padding: 20px;
-  position: relative;
+  position: absolute;
+  background: #fff;
+  height: 85%;
+  width: 96.5%; 
+  border-radius: 0 0 25px 25px;
 }
 
 .back-arrow {
@@ -11,13 +14,13 @@
   top: 10px;
   left: 10px;
   text-decoration: none;
-  color: #fff; /* Customize the color */
+  color: #000;
 }
 
 .page-heading {
   font-size: 24px;
   font-weight: bold;
-  color: #fff; /* Customize the color */
+  color: #000; 
   margin-top: 20px;
 }
 
@@ -29,35 +32,48 @@
 }
 
 .progress-circle {
-  width: 150px; /* Increase the size as needed */
-  height: 150px; /* Increase the size as needed */
-  background-color: #f0f0f0; /* Circle background color */
+  width: 150px; 
+  height: 150px; 
+  border: 4px solid rgb(94, 193, 255); 
   border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgb(114, 201, 255); 
 }
 
-.progress-circle-inner {
-  width: 100%;
-  height: 100%;
-  background-color: #3498db; /* Progress color */
-  border-radius: 50%;
-  transform: rotate(-45deg);
-  transform-origin: 50% 50%;
+
+.step-count-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
 }
 
-.progress-circle-progress {
-  width: 50%;
-  height: 100%;
-  background-color: #3498db; /* Progress color */
-  border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+.step-count {
+  font-size: 25px;
+  color: #000; /* Step count color */
+  margin-top: 10px;
+}
+
+.goal {
+  font-size: 10px;
+  color: #2c2b2b9a; /* Goal color */
+  margin-top: 5px;
+}
+
+.today {
+  font-size: 8px;
+  color: #2c2b2b9a; /* Date color */
+  margin-top: 5px;
 }
 
 .arrow {
   font-size: 24px;
-  color: #fff; /* Arrow color */
+  color: #000; /* Arrow color */
   cursor: pointer;
 }
 

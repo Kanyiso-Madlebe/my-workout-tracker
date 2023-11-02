@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/menu.css';
+import DGC from '../images/DGC logo.png'
 import Pic1 from '../images/yogayo.jpeg';
 import Pic2 from '../images/stretch.jpeg';
 import Pic3 from '../images/wa.jpeg';
@@ -43,36 +44,7 @@ function Navbar() {
       setCurrentDay(currentDay - 1);
     }
   };
-
-  const getCurrentDateTime = () => {
-    const now = new Date();
-    const date = now.toDateString();
-    const time = now.toLocaleTimeString();
-    return `${date} ${time}`;
-  };
-
-  const startTimer = () => {
-    setStartTime(Date.now() - elapsedTime);
-    setTimerRunning(true);
-  };
-
-  const stopTimer = () => {
-    setTimerRunning(false);
-  };
-
-  const resetTimer = () => {
-    setElapsedTime(0);
-    setTimerRunning(false);
-  };
-
-  const formatTime = (milliseconds) => {
-    const seconds = Math.floor(milliseconds / 1000);
-    const minutes = Math.floor(seconds / 60);
-    const hours = Math.floor(minutes / 60);
-
-    return `${hours}:${minutes % 60}:${seconds % 60}`;
-  };
-
+  
   const handleImageClick = (imageId) => {
     // Your image click handling logic here
     console.log(`Clicked on image with id: ${imageId}`);
@@ -85,6 +57,7 @@ function Navbar() {
   };
 
   return (
+    
     <div>
       <nav className="navbar" id="menu">
         <ul>
@@ -113,6 +86,7 @@ function Navbar() {
         <strong>Ready to go</strong>
       </div>
 
+
       <div className="day-container">
         <button className="arrow-left" onClick={prevDays} disabled={currentDay === 0}>
           &lt;
@@ -126,23 +100,10 @@ function Navbar() {
           &gt;
         </button>
       </div>
-
-      <div className="date-time">
-        <p>{getCurrentDateTime()}</p>
-        <div className="timer-container">
-          <div
-            className={`circle ${timerRunning ? 'active' : ''}`}
-            onClick={timerRunning ? stopTimer : startTimer}  
-          >
-            {timerRunning ? 'Stop' : 'Start'}
-          </div>
-          <p>Elapsed Time: {formatTime(elapsedTime)}</p>
-        </div>
-        <button className="reset-button" onClick={resetTimer}>
-          Reset
-        </button>
+      {/* Centered image section */}
+      <div className="centered-image">
+              <img src={DGC} alt="Your Image Description" />
       </div>
-
       <div className="image-category">
         <u>
           <div className="category-heading">
@@ -178,6 +139,8 @@ function Navbar() {
           +
         </Link>
       </div>
+
+      
     </div>
   );
 }
