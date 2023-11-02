@@ -1,22 +1,70 @@
 /* progress.css */
 .progress-container {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .back-arrow {
-    font-size: 24px;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    text-decoration: none;
-    color: #fff; /* Customize the color */
-  }
-  
-  .page-heading {
-    font-size: 24px;
-    font-weight: bold;
-    color: #fff; /* Customize the color */
-    margin-top: 20px;
-  }
-  
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+.back-arrow {
+  font-size: 24px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  text-decoration: none;
+  color: #fff; /* Customize the color */
+}
+
+.page-heading {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff; /* Customize the color */
+  margin-top: 20px;
+}
+
+.progress-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10vh;
+}
+
+.progress-circle {
+  width: 150px; /* Increase the size as needed */
+  height: 150px; /* Increase the size as needed */
+  background-color: #f0f0f0; /* Circle background color */
+  border-radius: 50%;
+}
+
+.progress-circle-inner {
+  width: 100%;
+  height: 100%;
+  background-color: #3498db; /* Progress color */
+  border-radius: 50%;
+  transform: rotate(-45deg);
+  transform-origin: 50% 50%;
+}
+
+.progress-circle-progress {
+  width: 50%;
+  height: 100%;
+  background-color: #3498db; /* Progress color */
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.arrow {
+  font-size: 24px;
+  color: #fff; /* Arrow color */
+  cursor: pointer;
+}
+
+.left {
+  margin-right: 10px;
+}
+
+.right {
+  margin-left: 10px;
+}
