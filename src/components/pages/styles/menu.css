@@ -84,8 +84,8 @@
 }
 
 .centered-image img {
-  width: 200px;
-  height: auto;
+  width: 370px; /* Let the width adjust automatically */
+  height: 400px; /* Set a fixed height */
   cursor: pointer;
   border-radius: 10px;
   z-index: 0;
@@ -93,14 +93,14 @@
 }
 
 .centered-image img:hover {
-  transform: scale(1.1);
   z-index: 1;
 }
+
 
 /* Style for the category heading */
 .image-category {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 20vh;
 }
 
 .category-heading {
@@ -185,4 +185,25 @@
 /* Style for menu items */
 .menu-dropdown li:hover {
   background-color: #ccc;
+}
+
+@media  (max-width: 450px) {
+  .centered-image img {
+    width: 270px; /* Let the width adjust automatically */
+    height: 300px; /* Set a fixed height */
+    cursor: pointer;
+    border-radius: 10px;
+    z-index: 0;
+    transition: transform 0.2s, z-index 0.2s;
+  }
+  .image-container img {
+    width: 90px;
+    height: 20vh;
+    cursor: pointer;
+    border-radius: 10px;
+    z-index: 0;
+    transition: transform 0.2s, z-index 0.2s;
+    margin: auto;
+  }
+  
 }
