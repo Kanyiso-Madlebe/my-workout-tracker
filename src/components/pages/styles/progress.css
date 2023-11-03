@@ -84,3 +84,27 @@
 .right {
   margin-left: 10px;
 }
+/* Add these styles to your existing CSS file or create a new one */
+.exercise-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.exercise-icon {
+  margin: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.exercise-icon svg {
+  font-size: 22px; /* Adjust the icon size as needed */
+  color: #000; /* Icon color */
+}
+
+.exercise-icon span {
+  font-size: 14px; /* Text size */
+  margin-top: 5px;
+  color: #000; /* Text color */
+}

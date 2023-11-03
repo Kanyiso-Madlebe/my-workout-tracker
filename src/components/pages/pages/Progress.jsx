@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/progress.css';
 import { FaWalking } from 'react-icons/fa';
+import {FaRunning} from 'react-icons/fa'
+import { IoMdFitness } from 'react-icons/io';
+import { FaDumbbell } from 'react-icons/fa';
 
 function Progress() {
   const [stepCount, setStepCount] = useState(0);
@@ -21,8 +24,9 @@ function Progress() {
 
   return (
     <div className="progress-container">
-     
-      <Link to="/menu" className="back-arrow">&#8592;</Link>
+      <Link to="/menu" className="back-arrow">
+        &#8592;
+      </Link>
       <h1 className="page-heading">My Progress</h1>
       <div className="progress-indicator">
         <div className="arrow left">&#9664;</div>
@@ -36,7 +40,19 @@ function Progress() {
         </div>
         <div className="arrow right">&#9654;</div>
       </div>
+      <div className="exercise-icons">
+        <div className="exercise-icon">
+          <IoMdFitness size={22} color="black" /> {/* Fitness icon */}
+        </div>
+        <div className="exercise-icon">
+          <FaRunning size={22} color="black" /> {/* Fitness icon */}
+        </div>
+        <div className="exercise-icon">
+          <FaDumbbell size={22} color="black" /> {/* Dumbbell icon */}
+        </div>
       </div>
+      <h2 className="page-heading">Week days</h2>
+    </div>
   );
 }
 
