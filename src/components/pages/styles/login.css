@@ -106,6 +106,7 @@ a {
 }
 
 /* Media queries for smaller screens */
+/* Media queries for smaller screens */
 @media (max-width: 768px) {
   .login-form {
     height: 90%; /* Adjust height for smaller screens */
@@ -115,7 +116,7 @@ a {
     text-align: center;
     margin-bottom: 35px;
   }
- 
+
   .remember-me {
     text-align: left;
     margin: 10px 0;
@@ -128,14 +129,38 @@ a {
   }
 
   .remember-me input[type="checkbox"] {
-    margin-right: 5px; 
+    margin-right: 5px;
   }
 
- 
   button {
     width: 96%;
   }
+
+  .social-icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
+
+  .social-icons a {
+    text-decoration: none;
+    color: #4267B2;
+    margin: 0 10px;
+    font-size: 24px;
+    display: flex; /* Add this to center the icons within the links */
+    align-items: center; /* Center vertically within the links */
+  }
+
+  .social-icons a:hover {
+    color: #4267b2b6; /* Change the color for Facebook on hover */
+  }
+
+  .social-icons a:nth-child(2):hover {
+    color: #4286f4a2; /* Change the color for Google on hover */
+  }
 }
+
 /* Center the icons vertically and add hover styles */
 .social-icons {
   margin-top: 20px;
