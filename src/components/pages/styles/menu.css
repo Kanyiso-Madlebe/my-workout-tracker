@@ -33,6 +33,21 @@
   color: #000;
   text-decoration: none;
 }
+/* Style for the logo container */
+.logo-container {
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+}
+
+/* Style for the logo image */
+.logo {
+  width: 40px; 
+  height: auto; 
+  cursor: pointer;
+  border-radius: 100%; 
+}
+
 
 /* Style for the day container */
 .day-container {

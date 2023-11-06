@@ -10,7 +10,7 @@
     font-size: 24px;
     margin: 20px 0;
   }
-  .image-container {
+  .settings-img {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,7 +18,7 @@
   }
   
   /* Style the image (optional) */
-  .image-container img {
+  .settings-img img {
     width: 100px; /* Set the desired width */
     height: 100px; /* Set the desired height */
     object-fit: contain; /* Adjust the object-fit as needed */

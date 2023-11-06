@@ -5,6 +5,7 @@ import DGC from '../images/DGC logo.png'
 import Pic1 from '../images/yogayo.jpeg';
 import Pic2 from '../images/stretch.jpeg';
 import Pic3 from '../images/wa.jpeg';
+import KM from '../images/KM-logo.png'
 
 function Navbar() {
   const [isArrowUp, setIsArrowUp] = useState(false);
@@ -60,14 +61,17 @@ function Navbar() {
     
     <div>
       <nav className="navbar" id="menu">
-        <ul>
-          <li>
-            <a href="/menu" onClick={handleMenuClick}>
-              Menu {isMenuOpen ? '▲' : '▼'}
-            </a>
-          </li>
-        </ul>
-      </nav>
+      <ul>
+        <li>
+          <a href="/menu" onClick={handleMenuClick}>
+            Menu {isMenuOpen ? '▲' : '▼'}
+          </a>
+        </li>
+      </ul>
+      <div className="logo-container">
+        <img src={KM} alt="KM" className="logo" />
+      </div>
+    </nav>
 
       {/* Dropdown menu */}
       {isMenuOpen && (

@@ -10,8 +10,11 @@ function SettingsPage() {
 
   return (
     <div className="settings-container">
+        <Link to="/menu" className="back-arrow">
+        &#8592; 
+      </Link>
       <h1>Kanyiso Madlebe</h1>
-      <div className="image-container">
+      <div className="settings-img">
         <img src={Person} alt="pic" />
         </div>
 
