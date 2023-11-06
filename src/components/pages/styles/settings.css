@@ -1,0 +1,87 @@
+.settings-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    color: black;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin: 20px 0;
+  }
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  /* Style the image (optional) */
+  .image-container img {
+    width: 100px; /* Set the desired width */
+    height: 100px; /* Set the desired height */
+    object-fit: contain; /* Adjust the object-fit as needed */
+  }
+  
+  h4{
+    text-align: center;
+  }
+  
+  p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  
+  .profile-section,
+  .private-info-section,
+  .change-password-section,
+  .about-section {
+    margin-top: 20px;
+  }
+  
+  h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  input[type="password"]:focus {
+    outline: none;
+    border: 1px solid #28273C;
+  }
+  
+  .logout-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  /* Style the button */
+  button {
+    background-color: #28273C;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+  }
+  
+  /* Hover effect */
+  button:hover {
+    background-color: #28273cc4; /* Darker shade of blue */
+  }

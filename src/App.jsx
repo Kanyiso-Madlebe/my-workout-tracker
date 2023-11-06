@@ -6,6 +6,7 @@ import Progress from './components/pages/pages/progress';
 import Login from "./components/pages/pages/Login";
 import SignUp from "./components/pages/pages/Signup";
 import Terms from './components/pages/pages/Terms';
+import Settings from './components/pages/pages/Settings'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route path="/menu" element={<Menu />} />
       <Route path="/progress" element={<Progress />} />
       <Route path="/terms" element={<Terms />} />
+      <Route path="/settings" element={<Settings/>} />
     </Routes>
   </Router>
   );
