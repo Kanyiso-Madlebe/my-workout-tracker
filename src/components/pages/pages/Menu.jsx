@@ -75,7 +75,7 @@ function Navbar() {
           <ul>
             <li><Link to="/history">History</Link></li>
             <li><Link to="/faq">FAQ</Link></li>
-            <li><Link to="/terms-privacy">Terms and Privacy</Link></li>
+            <li><Link to="/terms">Terms and Conditions</Link></li>
             <li><Link to="/settings">Settings</Link></li>
             <li><Link to="/">Logout</Link></li>
           </ul>

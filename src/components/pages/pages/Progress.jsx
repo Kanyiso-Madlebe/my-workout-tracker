@@ -42,13 +42,13 @@ function Progress() {
       </div>
       <div className="exercise-icons">
         <div className="exercise-icon">
-          <IoMdFitness size={22} color="black" /> {/* Fitness icon */}
+          <IoMdFitness size={22} color="black" /> 
         </div>
         <div className="exercise-icon">
-          <FaRunning size={22} color="black" /> {/* Fitness icon */}
+          <FaRunning size={22} color="black" /> 
         </div>
         <div className="exercise-icon">
-          <FaDumbbell size={22} color="black" /> {/* Dumbbell icon */}
+          <FaDumbbell size={22} color="black" />    
         </div>
       </div>
       <h2 className="page-heading">Week days</h2>

@@ -5,6 +5,7 @@ import Menu from './components/pages/pages/Menu'
 import Progress from './components/pages/pages/progress';
 import Login from "./components/pages/pages/Login";
 import SignUp from "./components/pages/pages/Signup";
+import Terms from './components/pages/pages/Terms';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path="/signup" element={<SignUp />} />
       <Route path="/menu" element={<Menu />} />
       <Route path="/progress" element={<Progress />} />
+      <Route path="/terms" element={<Terms />} />
     </Routes>
   </Router>
   );
