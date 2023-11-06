@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import '../styles/login.css';
 import { Link } from 'react-router-dom';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
+
+library.add(faFacebook, faGoogle);
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -47,11 +52,11 @@ function Login() {
       <div className="background-1"></div>
       <div className="background-2"></div>
       <div className="login-form">
-      <div className="close-button">
-        <Link to="/" style={{ color: '#000' }}>
-          <i className="fa fa-times" onClick={handleClose}></i> {/* Use handleClose instead of handleCancel */}
-        </Link>
-      </div>
+        <div className="close-button">
+          <Link to="/" style={{ color: '#000' }}>
+            <i className="fa fa-times" onClick={handleClose}></i>
+          </Link>
+        </div>
         <h1>Login</h1>
         <h2>Enter your details below:</h2>
         <form>
@@ -70,19 +75,20 @@ function Login() {
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              className="password"
             />
             <div className="error-message">{errors.password}</div>
           </div>
-                  <div className="remember-me">
-          <label>
-            <input
-              type="checkbox"
-              checked={rememberMe}
-              onChange={() => setRememberMe(!rememberMe)}
-            />
-          Remember? 
-          </label>
-        </div>
+          <div className="remember-me">
+            <label>
+              <input
+                type="checkbox"
+                checked={rememberMe}
+                onChange={() => setRememberMe(!rememberMe)}
+              />
+              Remember?
+            </label>
+          </div>
           <button onClick={handleLogin}>
             <Link to="/menu" style={{ color: '#fff' }}>
               Login
@@ -91,6 +97,14 @@ function Login() {
         </form>
         <div className="forgot-password">
           <Link to="/forgot-password">Forgot password?</Link>
+          <div className="social-icons">
+            <a href="https://www.facebook.com/"> {/* Link to Facebook login page */}
+              <FontAwesomeIcon icon={['fab', 'facebook']} /> {/* Facebook icon */}
+            </a>
+            <a href="https://www.google.com/"> {/* Link to Google login page */}
+              <FontAwesomeIcon icon={['fab', 'google']} /> {/* Google icon */}
+            </a>
+          </div>
         </div>
       </div>
     </div>

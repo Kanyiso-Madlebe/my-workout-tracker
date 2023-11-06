@@ -29,7 +29,14 @@ label {
   margin-bottom: 5px;
   color: #000;
 }
-
+input#password.password{
+  border-bottom: 1px solid #3b3a3a;
+  width: 95%;
+  border-top: #fff;
+  border-left: #fff;
+  border-right: #fff;
+  border-radius: 0%;
+}
 input {
   padding: 10px;
   border: none;
@@ -53,8 +60,8 @@ button:hover {
 }
 
 p {
-  text-align: center;
   color: #000;
+  margin-left: 10vh;
 }
 
 a {
@@ -67,8 +74,8 @@ a:hover {
 }
 
 span, a {
-  display: inline; /* Make the span and a elements inline */
-  font-size: 14px; /* You can set the font size if needed */
+  display: inline; 
+  font-size: 14px; 
 }
 
 .have-account-button {
@@ -108,4 +115,13 @@ button.social-button {
 
 button.social-button:last-child {
   margin-right: 0;
+}
+@media (max-width: 450px) {
+  .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+    width: 76%;
+    margin-left: 6.5vh;
+  }
+  
 }

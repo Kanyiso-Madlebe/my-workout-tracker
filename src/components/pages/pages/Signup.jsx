@@ -73,12 +73,14 @@ const SignUp = () => {
           id="password"
           value={formData.password}
           onChange={handleInputChange}
+          className="password"
         />
-      </div>
+      </div>    
+
       <button onClick={handleSignUp} type="submit">Sign Up</button>
       <p>
-        <span>Do you agree with the <a href="/terms">Terms of Service</a> and</span>{' '}
-        <a href="/privacy">Privacy Policy</a>.
+        <span>Do you agree with the <a href="/terms">Terms </a> and</span>{' '}
+        <a href="/terms">Conditions</a>.
       </p>
       <button className="have-account-button">Already have an account?</button>
     </div>

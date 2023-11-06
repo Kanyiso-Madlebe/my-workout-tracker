@@ -45,14 +45,22 @@
 
 
 .login-form input {
-  width: 97%;
+  width: 95%;
   padding: 10px;
   margin: 10px 0;
   border: none;
   border-bottom: 1px solid #3b3a3a;
-  border-radius: 5px;
+  border-radius: 0%;
   margin-bottom: 40px;
   justify-content: space-between;
+}
+.login-form input.password{
+  border-bottom: 1px solid #3b3a3a;
+  border-top: #fff;
+  border-left: #fff;
+  border-right: #fff;
+  border-radius: 0%;
+  width: 95%;
 }
 
 .remember-me {
@@ -101,17 +109,54 @@ a {
 @media (max-width: 768px) {
   .login-form {
     height: 90%; /* Adjust height for smaller screens */
-    border-radius: 0 0 70px 70px; 
+    border-radius: 0 0 70px 70px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     z-index: 3;
     text-align: center;
     margin-bottom: 35px;
   }
-
-  .login-form input {
-    width: 90%;
+ 
+  .remember-me {
+    text-align: left;
+    margin: 10px 0;
   }
+
+  .remember-me label {
+    display: flex;
+    align-items: center;
+    margin-right: 40vh;
+  }
+
+  .remember-me input[type="checkbox"] {
+    margin-right: 5px; 
+  }
+
+ 
   button {
     width: 96%;
   }
+}
+/* Center the icons vertically and add hover styles */
+.social-icons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.social-icons a {
+  text-decoration: none;
+  color: #4267B2;
+  margin: 0 10px;
+  font-size: 24px;
+  display: flex; /* Add this to center the icons within the links */
+  align-items: center; /* Center vertically within the links */
+}
+
+.social-icons a:hover {
+  color: #4267b2b6; /* Change the color for Facebook on hover */
+}
+
+.social-icons a:nth-child(2):hover {
+  color: #4286f4a2; /* Change the color for Google on hover */
 }
