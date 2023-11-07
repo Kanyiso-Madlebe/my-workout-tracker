@@ -1,18 +1,23 @@
+
 .progress-container {
   text-align: center;
   padding: 20px;
   position: absolute;
   background: #fff;
-  height: 85%;
-  width: 96.5%; 
+  height: 92%;
+  width: 96.5%;
   border-radius: 0 0 25px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 
 .back-arrow {
   font-size: 24px;
   position: absolute;
   top: 10px;
-  left: 10px;
+  left: -555px; 
   text-decoration: none;
   color: #000;
 }
@@ -28,12 +33,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 10vh;
+  margin-top: 1vh;
 }
 
 .progress-circle {
-  width: 150px; 
-  height: 150px; 
+  width: 120px; 
+  height: 120px; 
   border: 4px solid rgb(94, 193, 255); 
   border-radius: 50%;
   position: relative;
@@ -56,19 +61,19 @@
 .step-count {
   font-size: 25px;
   color: #000; /* Step count color */
-  margin-top: 10px;
+  margin-top: 13px;
 }
 
 .goal {
   font-size: 10px;
   color: #2c2b2b9a; /* Goal color */
-  margin-top: 5px;
+  margin-top: 1px;
 }
 
 .today {
   font-size: 8px;
   color: #2c2b2b9a; /* Date color */
-  margin-top: 5px;
+  margin-bottom: 15px;
 }
 
 .arrow {
@@ -107,4 +112,95 @@
   font-size: 14px; /* Text size */
   margin-top: 5px;
   color: #000; /* Text color */
+}
+/* Add these styles to your existing CSS file or create a new one */
+
+.bar-graph-container {
+  background: #D9D9D9; /* Set the desired background color */
+  width: 60%;
+  height: 40vh;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bar-graph {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 80%;
+  height: 225.734px; /* Set the desired height */
+}
+
+.bar {
+  flex-shrink: 0;
+  transform: rotate(0.469deg);
+  margin: 0 5px; /* Adjust the margin between bars as needed */
+}
+
+/* Bar 1: Monday */
+.bar:nth-child(1) {
+  width: 15px;
+  background: linear-gradient(0deg, #474646 0%, #474646 100%), linear-gradient(0deg, #474646 0%, #474646 100%), linear-gradient(0deg, #474646 0%, #474646 100%), #474646;
+  height: 147px;
+}
+
+/* Bar 2: Tuesday */
+.bar:nth-child(2) {
+  width: 16px;
+  background: #979797;
+  height: 198px;
+}
+
+/* Bar 3: Wednesday */
+.bar:nth-child(3) {
+  width: 15px;
+  background: rgba(0, 0, 0, 0.83);
+  height: 136px;
+}
+
+/* Bar 4: Thursday */
+.bar:nth-child(4) {
+  width: 15px;
+  background: #675B5B;
+  height: 180px;
+}
+
+/* Bar 5: Friday */
+.bar:nth-child(5) {
+  width: 15px;
+  background: rgba(0, 0, 0, 0.83);
+  height: 136px;
+}
+
+/* Bar 6: Saturday */
+.bar:nth-child(6) {
+  width: 15px;
+  background: rgba(0, 0, 0, 0.73);
+  height: 200px;
+}
+
+/* Bar 7: Sunday */
+.bar:nth-child(7) {
+  width: 15px;
+  background: #746E6E;
+  height: 60px;
+}
+
+@media (max-width: 450px){
+  .progress-container{
+    height: fit-content;
+    width: 90%;
+  }
+  .back-arrow{
+    margin-left: 120vh;
+  }
+  .bar-graph-container{
+    height: 35vh;
+  }
+  .bar-graph{
+    margin-top: 23px;
+  }
+  
 }

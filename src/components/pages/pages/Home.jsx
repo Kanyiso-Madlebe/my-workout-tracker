@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { Link } from 'react-router-dom'; 
 import '../styles/home.css';
 
 // Import your LoginPage and SignUpForm components here
@@ -37,7 +37,7 @@ function Header() {
           transition={{ duration: 1, delay: 1 }}
           className="buttons-desktop"
         >
-          <Link to="/login"> {/* Link to the Login page */}
+          <Link to="/login"> 
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
@@ -47,7 +47,7 @@ function Header() {
               Login
             </motion.button>
           </Link>
-          <Link to="/signup"> {/* Link to the Sign Up page */}
+          <Link to="/signup"> 
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
