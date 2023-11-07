@@ -8,6 +8,7 @@ import SignUp from "./components/pages/pages/Signup";
 import Terms from './components/pages/pages/Terms';
 import Settings from './components/pages/pages/Settings'
 import FAQ from './components/pages/pages/Faq';
+import History from './components/pages/pages/history';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path="/terms" element={<Terms />} />
       <Route path="/settings" element={<Settings/>} />
       <Route path="/faq" element={<FAQ/>} />
+      <Route path="/history" element={<History/>} />
     </Routes>
   </Router>
   );
