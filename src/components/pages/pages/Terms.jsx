@@ -5,7 +5,7 @@ import '../styles/terms.css';
 function TermsPage() {
   return (
     <div className="terms-container">
-      <Link to="/menu" className="back-arrow">
+      <Link to="/menu" className="b-arrow">
         &#8592; 
       </Link>
       <h1>DGC Workout Tracker App - Terms and Conditions</h1>

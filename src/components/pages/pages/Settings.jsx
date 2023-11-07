@@ -10,7 +10,7 @@ function SettingsPage() {
 
   return (
     <div className="settings-container">
-        <Link to="/menu" className="back-arrow">
+        <Link to="/menu" className="back">
         &#8592; 
       </Link>
       <h1>Kanyiso Madlebe</h1>

@@ -24,7 +24,7 @@ function Progress() {
 
   return (
     <div className="progress-container">
-      <Link to="/menu" className="back-arrow">
+      <Link to="/menu" className="bac-arr">
         &#8592;
       </Link>
       <h1 className="page-heading">My Progress</h1>

@@ -7,6 +7,7 @@ import Login from "./components/pages/pages/Login";
 import SignUp from "./components/pages/pages/Signup";
 import Terms from './components/pages/pages/Terms';
 import Settings from './components/pages/pages/Settings'
+import FAQ from './components/pages/pages/Faq';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Route path="/progress" element={<Progress />} />
       <Route path="/terms" element={<Terms />} />
       <Route path="/settings" element={<Settings/>} />
+      <Route path="/faq" element={<FAQ/>} />
     </Routes>
   </Router>
   );
