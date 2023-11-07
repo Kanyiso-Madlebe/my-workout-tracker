@@ -5,10 +5,10 @@ import '../styles/terms.css';
 function TermsPage() {
   return (
     <div className="terms-container">
-      <Link to="/menu" className="b-arrow">
+      <Link to="/menu" className="a-arrow">
         &#8592; 
       </Link>
-      <h1>DGC Workout Tracker App - Terms and Conditions</h1>
+      <h2>DGC Workout Tracker App - Terms and Conditions</h2>
 
       <p>
         Welcome to the DGC Workout Tracker App! We're excited to have you as a user and appreciate your commitment to achieving your fitness goals. Before you start using our app, please take a moment to review our Terms and Conditions to ensure a smooth and enjoyable experience.

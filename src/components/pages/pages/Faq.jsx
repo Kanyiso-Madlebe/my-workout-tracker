@@ -7,7 +7,7 @@ function FAQ() {
     {
       id: 1,
       question: "What is DGC?",
-      answer: "DGC stands for 'Daily Gym Companion,' and it's a workout tracker app designed to help you monitor and improve your fitness journey."
+      answer: "DGC stands for 'Debeza's Gym Companion,' and it's a workout tracker app designed to help you monitor and improve your fitness journey."
     },
     // Add more initial questions and answers here
   ]);
@@ -30,6 +30,9 @@ function FAQ() {
 
   return (
     <div className="faq-page">
+        <Link to="/menu" className="b-arrow">
+        &#8592; 
+      </Link>
       <h1>Frequently Asked Questions (FAQ)</h1>
 
       <ul className="question-list">

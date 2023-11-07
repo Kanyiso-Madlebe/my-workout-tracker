@@ -10,10 +10,10 @@ function SettingsPage() {
 
   return (
     <div className="settings-container">
-        <Link to="/menu" className="back">
+        <Link to="/menu" className="c-back">
         &#8592; 
       </Link>
-      <h1>Kanyiso Madlebe</h1>
+      <h2>Kanyiso Madlebe</h2>
       <div className="settings-img">
         <img src={Person} alt="pic" />
         </div>
@@ -21,7 +21,7 @@ function SettingsPage() {
       <h4>Debz user since Oct 2023</h4>
 
       <div className="profile-section">
-        <h2>Basic Profile</h2>
+        <h3>Basic Profile</h3>
         <p>
           <i className="fas fa-user"> </i> Kanyiso Madlebe
         </p>
@@ -35,7 +35,7 @@ function SettingsPage() {
       </div>
 
       <div className="private-info-section">
-        <h2>Private Information</h2>
+        <h3>Private Information</h3>
         <p>
           <i className="fas fa-envelope"> </i> kanyisomadlebe@yahoo.com
         </p>
@@ -48,7 +48,7 @@ function SettingsPage() {
       </div>
 
       <div className="change-password-section">
-        <h2>Change Password</h2>
+        <h3>Change Password</h3>
         <p>
           <i className="fas fa-lock"> </i> Enter new password
         </p>
@@ -58,7 +58,7 @@ function SettingsPage() {
       </div>
 
       <div className="about-section">
-        <h2>About</h2>
+        <h3>About</h3>
         <p>
           <i className="fas fa-info"> </i> Help
         </p>

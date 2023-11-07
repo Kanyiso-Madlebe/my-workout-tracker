@@ -6,17 +6,18 @@
     color: black;
   }
   
-  /* .b-arrow {
+  .a-arrow {
     text-decoration: none;
     color: #000; 
     font-size: 24px;
     position: relative;
-  } */
+  }
   
-  h1 {
-    font-size: 24px;
+  h2 {
+    font-size: 27px;
     margin: 20px 0;
     text-align: center;
+    color: #000; /* This sets the color to black */
   }
   
   p {
