@@ -9,6 +9,7 @@ import Terms from './components/pages/pages/Terms';
 import Settings from './components/pages/pages/Settings'
 import FAQ from './components/pages/pages/Faq';
 import History from './components/pages/pages/history';
+import OTP from './components/pages/pages/Otp';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Route path="/settings" element={<Settings/>} />
       <Route path="/faq" element={<FAQ/>} />
       <Route path="/history" element={<History/>} />
+      <Route path="/otp" element={<OTP/>} />
     </Routes>
   </Router>
   );

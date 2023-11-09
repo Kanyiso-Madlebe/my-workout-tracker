@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import '../styles/signup.css';
 import 'font-awesome/css/font-awesome.min.css';
 
+
 const SignUp = () => {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -21,6 +22,9 @@ const SignUp = () => {
 
   const handleSignUp = () => {
     // Handle sign-up logic here
+    // Validate form inputs
+    // Create a new user account
+    // Store user details in the user database
   };
 
   const handleCancel = () => {
@@ -30,7 +34,7 @@ const SignUp = () => {
   return (
     <div className="signup-container">
       <div className="close-button">
-        <Link to="/" style={{ color: '#000' }}> {/* Wrap the "Close" button with Link */}
+        <Link to="/" style={{ color: '#000' }}>
           <i className="fa fa-times" onClick={handleCancel}></i>
         </Link>
       </div>
@@ -75,14 +79,15 @@ const SignUp = () => {
           onChange={handleInputChange}
           className="password"
         />
-      </div>    
-
+      </div>
       <button onClick={handleSignUp} type="submit">Sign Up</button>
       <p>
-        <span>Do you agree with the <a href="/terms">Terms </a> and</span>{' '}
+        <span>Do you agree with the <a href="/terms">Terms</a> and</span>{' '}
         <a href="/terms">Conditions</a>.
       </p>
-      <button className="have-account-button">Already have an account?</button>
+      <Link to="/login">
+        <button className="have-account-button">Already have an account?</button>
+      </Link>
     </div>
   );
 };

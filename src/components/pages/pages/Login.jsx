@@ -7,22 +7,27 @@ import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
 
 library.add(faFacebook, faGoogle);
 
+
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
   const [errors, setErrors] = useState({ email: '', password: '' });
 
-  const handleLogin = () => {
+  const handleLogin = (e) => {
+    e.preventDefault(); // Prevent the form from submitting
+
     // Check for validation errors before attempting to log in
     if (validateForm()) {
-      // Add your login logic here
+      // Check if the user exists in the user database
+      // If the user exists, proceed with the login logic
+      // If the user doesn't exist, display an error message or navigate to the sign-up page
     }
-  }
+  };
 
-  const handleClose = () => {
+  const handleClose = () =>{
     // Add code to close the page or navigate away
-  }
+  };
 
   const validateForm = () => {
     let valid = true;
@@ -32,7 +37,7 @@ function Login() {
     if (!email) {
       newErrors.email = 'Email is required';
       valid = false;
-    } else if (!/\S+@\S+\.\S+/.test(email)) {
+    } else if (!/\S+@\S+.\S+/.test(email)) {
       newErrors.email = 'Email is invalid';
       valid = false;
     }
@@ -45,7 +50,7 @@ function Login() {
 
     setErrors(newErrors);
     return valid;
-  }
+  };
 
   return (
     <div className="login-container">
@@ -59,13 +64,14 @@ function Login() {
         </div>
         <h1>Login</h1>
         <h2>Enter your details below:</h2>
-        <form>
+        <form onSubmit={handleLogin}>
           <div className="form-group">
             <input
               type="text"
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
             <div className="error-message">{errors.email}</div>
           </div>
@@ -76,6 +82,7 @@ function Login() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="password"
+              required
             />
             <div className="error-message">{errors.password}</div>
           </div>
@@ -89,20 +96,24 @@ function Login() {
               Remember?
             </label>
           </div>
-          <button onClick={handleLogin}>
-            <Link to="/menu" style={{ color: '#fff' }}>
+          <Link to="/menu">
+            <button style={{ color: '#fff' }} type="submit">
               Login
-            </Link>
-          </button>
+            </button>
+          </Link>
         </form>
         <div className="forgot-password">
-          <Link to="/forgot-password">Forgot password?</Link>
+          <Link to="/otp">Forgot password?</Link>
           <div className="social-icons">
-            <a href="https://www.facebook.com/"> {/* Link to Facebook login page */}
-              <FontAwesomeIcon icon={['fab', 'facebook']} /> {/* Facebook icon */}
+            <a href="https://www.facebook.com/">
+              {/* Link to Facebook login page */}
+              <FontAwesomeIcon icon={['fab', 'facebook']} />
+              {/* Facebook icon */}
             </a>
-            <a href="https://www.google.com/"> {/* Link to Google login page */}
-              <FontAwesomeIcon icon={['fab', 'google']} /> {/* Google icon */}
+            <a href="https://www.google.com/">
+              {/* Link to Google login page */}
+              <FontAwesomeIcon icon={['fab', 'google']} />
+              {/* Google icon */}
             </a>
           </div>
         </div>
