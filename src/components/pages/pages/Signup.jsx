@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/signup.css';
-import 'font-awesome/css/font-awesome.min.css';
-
+import '../styles/signup.css'; // Import your CSS
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +9,20 @@ const SignUp = () => {
     email: '',
     password: '',
   });
+
+  const [errors, setErrors] = useState({ email: '', password: '' });
+  const MIN_PASSWORD_LENGTH = 8;
+
+  const validateForm = () => {
+    const { email, password } = formData;
+    const emailError = isValidEmail(email) ? '' : 'Invalid email format';
+    const passwordError =
+      password.trim().length < MIN_PASSWORD_LENGTH
+        ? `Password must be at least ${MIN_PASSWORD_LENGTH} characters long`
+        : '';
+
+    setErrors({ email: emailError, password: passwordError });
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -21,14 +33,23 @@ const SignUp = () => {
   };
 
   const handleSignUp = () => {
-    // Handle sign-up logic here
-    // Validate form inputs
-    // Create a new user account
-    // Store user details in the user database
+    validateForm();
+    if (!errors.email && !errors.password) {
+      // Proceed with the sign-up logic
+      // Redirect to the appropriate page
+    } else {
+      // Handle error state, show messages, etc.
+    }
+  };
+
+  const isValidEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
   };
 
   const handleCancel = () => {
-    // Handle cancel logic here
+    // Add code to handle cancel logic here
+    // For example, navigate back or close the sign-up form
   };
 
   return (
@@ -68,6 +89,7 @@ const SignUp = () => {
           value={formData.email}
           onChange={handleInputChange}
         />
+        {errors.email && <div className="error-message">{errors.email}</div>}
       </div>
       <div className="form-group">
         <label htmlFor="password">Password</label>
@@ -77,17 +99,21 @@ const SignUp = () => {
           id="password"
           value={formData.password}
           onChange={handleInputChange}
-          className="password"
         />
+        {errors.password && <div className="error-message">{errors.password}</div>}
       </div>
-      <button onClick={handleSignUp} type="submit">Sign Up</button>
+      <button onClick={handleSignUp} type="signup">
+        Sign Up
+      </button>
       <p>
-        <span>Do you agree with the <a href="/terms">Terms</a> and</span>{' '}
-        <a href="/terms">Conditions</a>.
-      </p>
-      <Link to="/login">
-        <button className="have-account-button">Already have an account?</button>
-      </Link>
+  <span className="specific-margin with-margin">
+    Do you agree with the <a href="/terms" className="with-margin">Terms</a> and
+  </span>{' '}
+  <a href="/terms">Conditions</a>.
+</p>
+<Link to="/login">
+  <button className="have-account-button">Already have an account?</button>
+</Link>
     </div>
   );
 };

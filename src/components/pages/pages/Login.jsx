@@ -68,7 +68,7 @@ function Login() {
             <i className="fa fa-times" onClick={handleClose}></i>
           </Link>
         </div>
-        <h1>Login</h1>
+        <h2>Login</h2>
         <h2>Enter your details below:</h2>
         <form onSubmit={handleLogin}>
           <div>
