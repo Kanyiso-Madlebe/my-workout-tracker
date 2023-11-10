@@ -1,61 +1,67 @@
-import React, { useState } from 'react';
-import '../styles/login.css';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
+import '../styles/login.css';
+
 
 library.add(faFacebook, faGoogle);
-
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [rememberMe, setRememberMe] = useState(false);
   const [errors, setErrors] = useState({ email: '', password: '' });
+  const [formValid, setFormValid] = useState(false);
+  const MIN_PASSWORD_LENGTH = 8;
+
+  const validateForm = () => {
+    const emailError = isValidEmail(email) ? '' : 'Invalid email format';
+    const passwordError =
+      password.trim().length < MIN_PASSWORD_LENGTH
+        ? `Password must be at least ${MIN_PASSWORD_LENGTH} characters long`
+        : '';
+
+    setErrors({ email: emailError, password: passwordError });
+
+    setFormValid(!(emailError || passwordError));
+  };
+
+  useEffect(() => {
+    // Run validation on email or password change
+    validateForm();
+  }, [email, password]);
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
 
   const handleLogin = (e) => {
-    e.preventDefault(); // Prevent the form from submitting
-
-    // Check for validation errors before attempting to log in
-    if (validateForm()) {
-      // Check if the user exists in the user database
-      // If the user exists, proceed with the login logic
-      // If the user doesn't exist, display an error message or navigate to the sign-up page
+    e.preventDefault();
+    if (formValid) {
+      // Proceed with the login logic
+      // Redirect to the "menu" page
+    } else {
+      // Handle error state, show messages, etc.
     }
   };
 
-  const handleClose = () =>{
+  const isValidEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const handleClose = () => {
     // Add code to close the page or navigate away
   };
 
-  const validateForm = () => {
-    let valid = true;
-    const newErrors = { email: '', password: '' };
-
-    // Validate email
-    if (!email) {
-      newErrors.email = 'Email is required';
-      valid = false;
-    } else if (!/\S+@\S+.\S+/.test(email)) {
-      newErrors.email = 'Email is invalid';
-      valid = false;
-    }
-
-    // Validate password (you can add more criteria here)
-    if (!password) {
-      newErrors.password = 'Password is required';
-      valid = false;
-    }
-
-    setErrors(newErrors);
-    return valid;
-  };
-
   return (
+        <div className="background-2">
     <div className="login-container">
-      <div className="background-1"></div>
-      <div className="background-2"></div>
       <div className="login-form">
         <div className="close-button">
           <Link to="/" style={{ color: '#000' }}>
@@ -65,60 +71,47 @@ function Login() {
         <h1>Login</h1>
         <h2>Enter your details below:</h2>
         <form onSubmit={handleLogin}>
-          <div className="form-group">
+          <div>
+            <label htmlFor="email">Email:</label>
             <input
-              type="text"
-              placeholder="Email"
+              type="email"
+              id="email"
+              name="email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
+              onChange={handleEmailChange}
             />
-            <div className="error-message">{errors.email}</div>
+            <span className="error">{errors.email}</span>
           </div>
-          <div className="form-group">
+          <div>
+            <label htmlFor="password">Password:</label>
             <input
               type="password"
-              placeholder="Password"
+              id="password"
+              name="password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="password"
-              required
+              onChange={handlePasswordChange}
             />
-            <div className="error-message">{errors.password}</div>
+            <span className="error">{errors.password}</span>
           </div>
-          <div className="remember-me">
-            <label>
-              <input
-                type="checkbox"
-                checked={rememberMe}
-                onChange={() => setRememberMe(!rememberMe)}
-              />
-              Remember?
-            </label>
-          </div>
-          <Link to="/menu">
-            <button style={{ color: '#fff' }} type="submit">
-              Login
+          {formValid && (
+            <button type="submit">
+              <Link to="/menu">Login</Link>
             </button>
-          </Link>
+          )}
         </form>
         <div className="forgot-password">
           <Link to="/otp">Forgot password?</Link>
           <div className="social-icons">
             <a href="https://www.facebook.com/">
-              {/* Link to Facebook login page */}
               <FontAwesomeIcon icon={['fab', 'facebook']} />
-              {/* Facebook icon */}
             </a>
             <a href="https://www.google.com/">
-              {/* Link to Google login page */}
               <FontAwesomeIcon icon={['fab', 'google']} />
-              {/* Google icon */}
             </a>
           </div>
         </div>
       </div>
-    </div>
+    </div></div>
   );
 }
 

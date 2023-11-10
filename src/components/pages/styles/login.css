@@ -1,187 +1,93 @@
+/* Styles for the main login container */
 .login-container {
   display: flex;
-  width: 100%;
-  height: 100vh;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  position: absolute;
-  background: #28273C; /* Background-1 */
-
-  &::before {
-    content: '';
-    width: 543px;
-    height: 543px;
-    border-radius: 543px;
-    opacity: 0.2;
-    background: #383850; /* Background-2 */
-    position: absolute;
-    z-index: 2;
-  }
 }
 
+.background-2 {
+  background: #fff;
+  width: 100%;
+  padding: 30px;
+}
 
-
+/* Login form styling */
 .login-form {
   background: #fff;
-  width: 97%;
-  height: 80%;
-  margin-bottom: 15vh;
   padding: 20px;
-  border-radius: 0 0 20px 20px; /* Set different border-radius values for each corner */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  z-index: 3;
-  text-align: center;
-}
-.login-form h1{
-  font-size: 32px;
-  font-display: bold;
-  color: #000;
-}
-.login-form h2 {
-  font-size: 24px;
-  margin: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
   margin-top: 30px;
 }
 
-
-.login-form input {
-  width: 95%;
-  padding: 10px;
-  margin: 10px 0;
-  border: none;
-  border-bottom: 1px solid #3b3a3a;
-  border-radius: 0%;
-  margin-bottom: 40px;
-  justify-content: space-between;
-}
-.login-form input.password{
-  border-bottom: 1px solid #3b3a3a;
-  border-top: #fff;
-  border-left: #fff;
-  border-right: #fff;
-  border-radius: 0%;
-  width: 95%;
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
-.remember-me {
-  text-align: left;
-  margin: 10px 0;
-  margin-right: 160vh;
+h1 {
+  text-align: center;
 }
 
-.remember-me label {
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
   display: flex;
-  align-items: center;
-  margin-left: 12vh;
-  
+  flex-direction: column;
 }
 
-.remember-me input[type="checkbox"] {
-  margin-right: 1px;
+label {
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
   margin-bottom: 10px;
 }
 
-
 button {
-  background: #28273C;
-  color: #fff;
-  width: 90%;
-  font-size: large;
-  padding: 10px 20px;
+  width: 100%;
+  padding: 8px;
   border: none;
-  border-radius: 5px;
+  border-radius: 3px;
+  background-color: #3498db;
+  color: white;
   cursor: pointer;
 }
 
-a {
+button a {
   text-decoration: none;
-  color: #28273C;
-  display: block;
-  margin-top: 10px;
-}
-.forgot-password{
-  text-align: left;
-  margin-left: 12vh;
-  margin-top: 2vh;
+  color: white;
 }
 
-/* Media queries for smaller screens */
-/* Media queries for smaller screens */
-@media (max-width: 768px) {
-  .login-form {
-    height: 90%; /* Adjust height for smaller screens */
-    border-radius: 0 0 70px 70px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    z-index: 3;
-    text-align: center;
-    margin-bottom: 35px;
-  }
-
-  .remember-me {
-    text-align: left;
-    margin: 10px 0;
-  }
-
-  .remember-me label {
-    display: flex;
-    align-items: center;
-    margin-right: 40vh;
-  }
-
-  .remember-me input[type="checkbox"] {
-    margin-right: 5px;
-  }
-
-  button {
-    width: 96%;
-  }
-
-  .social-icons {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-  }
-
-  .social-icons a {
-    text-decoration: none;
-    color: #4267B2;
-    margin: 0 10px;
-    font-size: 24px;
-    display: flex; /* Add this to center the icons within the links */
-    align-items: center; /* Center vertically within the links */
-  }
-
-  .social-icons a:hover {
-    color: #4267b2b6; /* Change the color for Facebook on hover */
-  }
-
-  .social-icons a:nth-child(2):hover {
-    color: #4286f4a2; /* Change the color for Google on hover */
-  }
-}
-
-/* Center the icons vertically and add hover styles */
-.social-icons {
+/* Styles for forgot password and social icons */
+.forgot-password {
   margin-top: 20px;
+  text-align: center;
+}
+
+.social-icons {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .social-icons a {
   text-decoration: none;
-  color: #4267B2;
-  margin: 0 10px;
-  font-size: 24px;
-  display: flex; /* Add this to center the icons within the links */
-  align-items: center; /* Center vertically within the links */
-}
-
-.social-icons a:hover {
-  color: #4267b2b6; /* Change the color for Facebook on hover */
-}
-
-.social-icons a:nth-child(2):hover {
-  color: #4286f4a2; /* Change the color for Google on hover */
+  color: #3498db;
+  margin: 0 5px;
 }

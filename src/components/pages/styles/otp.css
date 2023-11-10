@@ -13,7 +13,7 @@
   padding: 40px; /* Decreased padding */
   width: 50%; /* Decreased width */
   text-align: center;
-  margin: auto; /* Added margin:auto to center the container */
+  margin: auto;
   margin-top: 25vh;
 }
 
