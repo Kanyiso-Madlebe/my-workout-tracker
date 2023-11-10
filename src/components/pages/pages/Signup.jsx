@@ -10,18 +10,35 @@ const SignUp = () => {
     password: '',
   });
 
-  const [errors, setErrors] = useState({ email: '', password: '' });
+  const [errors, setErrors] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+  });
+
+  const [isSuccess, setIsSuccess] = useState(false);
   const MIN_PASSWORD_LENGTH = 8;
 
   const validateForm = () => {
-    const { email, password } = formData;
+    const { firstName, lastName, email, password } = formData;
+
+    // Validate each field separately and set individual error messages
+    const firstNameError = firstName.trim() ? '' : 'First name is required';
+    const lastNameError = lastName.trim() ? '' : 'Last name is required';
     const emailError = isValidEmail(email) ? '' : 'Invalid email format';
     const passwordError =
       password.trim().length < MIN_PASSWORD_LENGTH
         ? `Password must be at least ${MIN_PASSWORD_LENGTH} characters long`
         : '';
 
-    setErrors({ email: emailError, password: passwordError });
+    // Set individual errors for each field
+    setErrors({
+      firstName: firstNameError,
+      lastName: lastNameError,
+      email: emailError,
+      password: passwordError,
+    });
   };
 
   const handleInputChange = (e) => {
@@ -34,9 +51,8 @@ const SignUp = () => {
 
   const handleSignUp = () => {
     validateForm();
-    if (!errors.email && !errors.password) {
-      // Proceed with the sign-up logic
-      // Redirect to the appropriate page
+    if (Object.values(errors).every(val => !val) && Object.values(formData).every(val => val)) {
+      setIsSuccess(true);
     } else {
       // Handle error state, show messages, etc.
     }
@@ -60,60 +76,75 @@ const SignUp = () => {
         </Link>
       </div>
       <h2>Create an account</h2>
-      <div className="form-group">
-        <label htmlFor="firstName">First Name</label>
-        <input
-          type="text"
-          name="firstName"
-          id="firstName"
-          value={formData.firstName}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="lastName">Last Name</label>
-        <input
-          type="text"
-          name="lastName"
-          id="lastName"
-          value={formData.lastName}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          value={formData.email}
-          onChange={handleInputChange}
-        />
-        {errors.email && <div className="error-message">{errors.email}</div>}
-      </div>
-      <div className="form-group">
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          value={formData.password}
-          onChange={handleInputChange}
-        />
-        {errors.password && <div className="error-message">{errors.password}</div>}
-      </div>
-      <button onClick={handleSignUp} type="signup">
-        Sign Up
-      </button>
+      {
+        isSuccess ? (
+          <div className="pop">
+            <p>You've created the account successfully!</p>
+            <p>now <Link to="/login">login</Link></p>
+          </div>
+        ) : (
+          <>
+            <div className="form-group">
+              <label htmlFor="firstName">First Name</label>
+              <input
+                type="text"
+                name="firstName"
+                id="firstName"
+                value={formData.firstName}
+                onChange={handleInputChange}
+              />
+              {errors.firstName && <div className="error-message">{errors.firstName}</div>}
+            </div>
+            <div className="form-group">
+              <label htmlFor="lastName">Last Name</label>
+              <input
+                type="text"
+                name="lastName"
+                id="lastName"
+                value={formData.lastName}
+                onChange={handleInputChange}
+              />
+              {errors.lastName && <div className="error-message">{errors.lastName}</div>}
+            </div>
+            <div className="form-group">
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                value={formData.email}
+                onChange={handleInputChange}
+              />
+              {errors.email && <div className="error-message">{errors.email}</div>}
+            </div>
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                value={formData.password}
+                onChange={handleInputChange}
+              />
+              {errors.password && <div className="error-message">{errors.password}</div>}
+            </div>
+            <div className="form-group">
+              <button onClick={handleSignUp} type="signup" disabled={Object.values(errors).some(err => err) || Object.values(formData).some(val => !val)}>
+                Sign Up
+              </button>
+            </div>
+          </>
+        )
+      }
       <p>
-  <span className="specific-margin with-margin">
-    Do you agree with the <a href="/terms" className="with-margin">Terms</a> and
-  </span>{' '}
-  <a href="/terms">Conditions</a>.
-</p>
-<Link to="/login">
-  <button className="have-account-button">Already have an account?</button>
-</Link>
+        <span className="specific-margin with-margin">
+          Do you agree with the <a href="/terms" className="with-margin">Terms</a> and
+        </span>{' '}
+        <a href="/terms">Conditions</a>.
+      </p>
+      <Link to="/login">
+        <button className="have-account-button">Already have an account?</button>
+      </Link>
     </div>
   );
 };
