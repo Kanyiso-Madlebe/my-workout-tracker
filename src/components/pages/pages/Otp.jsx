@@ -43,15 +43,19 @@ function OTPPage() {
   const handleSendOTP = () => {
     if (phoneNumber) {
       generateRandomOTP();
-
-      axios
-        .post('/api/otp', { phoneNumber })
+  
+      axios.post('http://localhost:5173/api/otp', { phoneNumber })
         .then((response) => {
-          console.log('OTP sent successfully');
+          console.log('OTP sent successfully', response);
           setOTPSent(true);
         })
         .catch((error) => {
           console.error('Failed to send OTP:', error);
+          if (error.response) {
+            console.error('Response status:', error.response.status);
+            console.error('Response data:', error.response.data);
+            console.error('Response headers:', error.response.headers);
+          }
           // Handle error scenarios and display appropriate feedback to the user
         });
     }
@@ -59,10 +63,14 @@ function OTPPage() {
 
   const handleVerifyOTP = () => {
     // Implement OTP verification logic here
+    // You need to verify the entered OTP, and if it's correct, setVerificationSuccessful(true)
+    // If the OTP is incorrect, handle that scenario accordingly.
   };
 
   const handleSubmitNewPassword = () => {
     // Implement password submission logic here
+    // You should check if the password and confirmation match, and if they do, submit the new password to the server.
+    // If there are any errors, handle them accordingly.
   };
 
   return (
@@ -113,7 +121,7 @@ function OTPPage() {
             <p>
               {otpSent ? (
                 <span>
-                  OTP sent! Do not send OTP? <Link to="/forgot-password">Resend OTP</Link>
+                  OTP sent! Do not receive OTP? <Link to="/forgot-password">Resend OTP</Link>
                 </span>
               ) : (
                 <span>OTP not sent.</span>

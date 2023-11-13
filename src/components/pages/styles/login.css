@@ -1,35 +1,25 @@
 /* Styles for the main login container */
-.login-container {
+.background-2 {
+  background: #fff;
+  padding: 50px;
+  border-radius: 0 0 15px 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.background-2 {
-  background: #fff;
-  padding: 50px;
-  border-radius: 0 0 15px 15px;
-}
 
-/* Login form styling */
-.login-form {
-  background: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 300px;
-  margin-top: 30px;
-}
 
+/* Close button (Arrow icon) styling */
 .close-button {
   position: absolute;
   top: 10px;
-  right: 10px;
+  left: 10px; /* Position it at the top left corner */
+  cursor: pointer;
+  font-size: 24px;
+  text-decoration: none;
+  color: #000;
 }
-
-/* h1 {
-  text-align: center;
-} */
 
 h2 {
   text-align: center;
@@ -39,48 +29,38 @@ h2 {
 form {
   display: flex;
   flex-direction: column;
+  width: 170vh; 
 }
+
+button#now {
+  width: 97%;
+  margin: 10px auto;
+}
+
 
 label {
   margin-bottom: 5px;
 }
-
-input {
-  width: 100%;
-  margin-bottom: 10px;
-  padding: 8px;
-  border-radius: 3px;
-  border: 1px solid #000;
-}
 input#password{
-  width: 95%;
-  border-bottom: 1px solid #000;
   border-left: 0;
   border-right: 0;
   border-top: 0;
+  width: 95%;
+  border-bottom: 1px solid #000;
 }
-input#password:hover{
-  border: 2px solid #000;
+
+input {
+  width: 100%; /* Occupies full width */
+  margin-bottom: 15px; /* Increased margin */
+  padding: 10px; /* Increased padding */
+  border-radius: 5px; /* Slightly rounded corners */
+  border: 1px solid #000;
 }
+
 .error {
   color: red;
   font-size: 12px;
   margin-bottom: 10px;
-}
-
-button {
-  width: 100%;
-  padding: 8px;
-  border: none;
-  border-radius: 3px;
-  background-color: #3498db;
-  color: white;
-  cursor: pointer;
-}
-
-button a {
-  text-decoration: none;
-  color: white;
 }
 
 /* Styles for forgot password and social icons */

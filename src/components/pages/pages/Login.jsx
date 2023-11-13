@@ -3,10 +3,13 @@ import { Link } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { faArrowLeft, faTimes } from '@fortawesome/free-solid-svg-icons';
 import '../styles/login.css';
+import { createBrowserHistory } from 'history';
 
+const history = createBrowserHistory();
 
-library.add(faFacebook, faGoogle);
+library.add(faFacebook, faGoogle, faArrowLeft, faTimes);
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -43,8 +46,8 @@ function Login() {
   const handleLogin = (e) => {
     e.preventDefault();
     if (formValid) {
-      // Proceed with the login logic
       // Redirect to the "menu" page
+      history.push('/menu');
     } else {
       // Handle error state, show messages, etc.
     }
@@ -60,12 +63,12 @@ function Login() {
   };
 
   return (
-        <div className="background-2">
-    <div className="login-container">
+    <div className="background-2">
       <div className="login-form">
         <div className="close-button">
+          {/* Adding the arrow icon */}
           <Link to="/" style={{ color: '#000' }}>
-            <i className="fa fa-times" onClick={handleClose}></i>
+            <FontAwesomeIcon icon={faArrowLeft} onClick={handleClose} />
           </Link>
         </div>
         <h2>Login</h2>
@@ -93,25 +96,25 @@ function Login() {
             />
             <span className="error">{errors.password}</span>
           </div>
-          {formValid && (
-            <button type="submit">
-              <Link to="/menu">Login</Link>
-            </button>
-          )}
+          <div className="center-button">
+            {formValid && (
+              <button type="submit" id="now">Login</button>
+            )}
+          </div>
         </form>
         <div className="forgot-password">
           <Link to="/otp">Forgot password?</Link>
           <div className="social-icons">
             <a href="https://www.facebook.com/">
-              <FontAwesomeIcon icon={['fab', 'facebook']} />
+              <FontAwesomeIcon icon={faFacebook} />
             </a>
             <a href="https://www.google.com/">
-              <FontAwesomeIcon icon={['fab', 'google']} />
+              <FontAwesomeIcon icon={faGoogle} />
             </a>
           </div>
         </div>
       </div>
-    </div></div>
+    </div>
   );
 }
 
