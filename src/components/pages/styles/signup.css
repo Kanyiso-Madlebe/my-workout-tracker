@@ -35,46 +35,44 @@ input {
   width: 95%;
 }
 
-.button[type="signup"] {
-  background-color: #383850;
+.button {
   color: #fff;
-  padding: 10px 20px;
+  background-color: #383850;
   border: none;
-  border-radius: 3px;
   cursor: pointer;
-  margin-top: 1vh;
-  width: 99%;
+  width: 97%; 
 }
 
-button:hover {
-  background-color: rgba(0, 87, 179, 0.582);
+.button:hover {
+  background-color: #007bff;
 }
+
 
 p {
   color: #000;
   margin-left: 10vh;
 }
 .pop {
-  background-color: #5da05fb2; 
-  color: white; 
-  padding: 15px; 
-  text-align: center; 
-  border-radius: 5px; 
-  margin: 20vh auto; 
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  display: none; /* Initially hide the pop-up */
+  background-color: #5da05fb2;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  border-radius: 5px;
+  margin: 20vh auto;
   width: fit-content;
-  position: absolute; 
-  left: 50%; 
-  transform: translateX(-50%); 
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-
-.pop a {
-  color: #ffffff;
-  text-decoration: underline;
-}
-
-.pop a:hover {
-  text-decoration: none; 
+.pop.show {
+  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 
 a {
@@ -102,7 +100,7 @@ a.with-margin {
   background-color: #383850;
   border: none;
   cursor: pointer;
-  width: 90%;
+  width: 89%;
 }
 
 .close-button {

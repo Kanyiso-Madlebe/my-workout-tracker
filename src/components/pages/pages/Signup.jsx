@@ -18,6 +18,7 @@ const SignUp = () => {
   });
 
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isPopVisible, setIsPopVisible] = useState(false);
   const MIN_PASSWORD_LENGTH = 8;
 
   const validateForm = () => {
@@ -49,6 +50,7 @@ const SignUp = () => {
     validateForm();
     if (Object.values(errors).every(val => !val) && Object.values(formData).every(val => val)) {
       setIsSuccess(true);
+      setIsPopVisible(true); // Show the pop-up
     } else {
       setIsSuccess(false); // Reset success message if there are input errors
     }
@@ -63,7 +65,7 @@ const SignUp = () => {
     // Add code to handle cancel logic here
     // For example, navigate back or close the sign-up form
   };
-
+  
   return (
     <div className="signup-container">
       <div className="close-button">
@@ -118,15 +120,15 @@ const SignUp = () => {
           {errors.password && <div className="error-message">{errors.password}</div>}
         </div>
         <div className="form-group">
-          <button onClick={handleSignUp} type="signup" disabled={Object.values(errors).some(err => err) || Object.values(formData).some(val => !val)}>
-            Sign Up
-          </button>
-        </div>
-        {isSuccess ? (
-          <div className="pop">
-            <p>You've created the account successfully!</p>
-            <p>now <Link to="/login">login</Link></p>
-          </div>
+        <button onClick={handleSignUp} className="button" disabled={Object.values(errors).some(err => err) || Object.values(formData).some(val => !val)}>
+          Sign Up
+        </button>
+      </div>
+
+      <div className={`pop ${isPopVisible ? "show" : ""}`}>
+        <p>You've created the account successfully!</p>
+        <p>now <Link to="/login">login</Link></p>
+      </div>
         ) : (
           <p>
             <span className="specific-margin with-margin">
