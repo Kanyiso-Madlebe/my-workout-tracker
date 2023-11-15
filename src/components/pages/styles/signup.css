@@ -56,7 +56,7 @@ p {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
-  display: none; /* Initially hide the pop-up */
+  display: none;
   background-color: #5da05fb2;
   color: white;
   padding: 15px;
@@ -68,6 +68,7 @@ p {
   left: 50%;
   transform: translateX(-50%);
 }
+
 
 .pop.show {
   display: block;

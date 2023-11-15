@@ -25,7 +25,7 @@ function FAQ() {
         answer: "This question is awaiting an answer from the admin."
       }
     ]);
-    setNewQuestion(''); // Clear the input field
+    setNewQuestion(''); 
   };
 
   return (

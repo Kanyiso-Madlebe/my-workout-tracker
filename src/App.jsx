@@ -10,6 +10,7 @@ import Settings from './components/pages/pages/Settings'
 import FAQ from './components/pages/pages/Faq';
 import History from './components/pages/pages/history';
 import OTP from './components/pages/pages/Otp';
+import POP from './components/pages/pages/pop'
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <Route path="/faq" element={<FAQ/>} />
       <Route path="/history" element={<History/>} />
       <Route path="/otp" element={<OTP/>} />
+      <Route path="/pop" element={<POP/>} />
     </Routes>
   </Router>
   );

@@ -1,3 +1,4 @@
+// Import necessary dependencies
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/signup.css'; // Import your CSS
@@ -50,10 +51,16 @@ const SignUp = () => {
     validateForm();
     if (Object.values(errors).every(val => !val) && Object.values(formData).every(val => val)) {
       setIsSuccess(true);
-      setIsPopVisible(true); // Show the pop-up
+      // Redirect to the success page
+      window.location.href = '/signup-success';
     } else {
-      setIsSuccess(false); // Reset success message if there are input errors
+      setIsSuccess(false);
     }
+  };
+
+  const handleClosePopUp = () => {
+    setIsPopVisible(false);
+    // Optionally, you can reset form fields or perform other actions here
   };
 
   const isValidEmail = (email) => {
@@ -120,27 +127,20 @@ const SignUp = () => {
           {errors.password && <div className="error-message">{errors.password}</div>}
         </div>
         <div className="form-group">
-        <button onClick={handleSignUp} className="button" disabled={Object.values(errors).some(err => err) || Object.values(formData).some(val => !val)}>
-          Sign Up
-        </button>
-      </div>
+          <button onClick={handleSignUp} className="button" disabled={Object.values(errors).some(err => err) || Object.values(formData).some(val => !val)}>
+            Sign Up
+          </button>
+        </div>
 
-      <div className={`pop ${isPopVisible ? "show" : ""}`}>
-        <p>You've created the account successfully!</p>
-        <p>now <Link to="/login">login</Link></p>
-      </div>
-        ) : (
-          <p>
-            <span className="specific-margin with-margin">
-              Do you agree with the <a href="/terms" className="with-margin">Terms</a> and
-            </span>{' '}
-            <a href="/terms">Conditions</a>.
-          </p>
+        {isSuccess && (
+         <Link to="/pop"> <SignUpPopUp onClose={handleClosePopUp} /></Link>
         )}
+        
+
+        <Link to="/login">
+          <button className="have-account-button">Already have an account?</button>
+        </Link>
       </>
-      <Link to="/login">
-        <button className="have-account-button">Already have an account?</button>
-      </Link>
     </div>
   );
 };
