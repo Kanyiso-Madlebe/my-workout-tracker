@@ -1,7 +1,7 @@
 // Import necessary dependencies
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/signup.css'; // Import your CSS
+import '../styles/signup.css';
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -52,7 +52,7 @@ const SignUp = () => {
     if (Object.values(errors).every(val => !val) && Object.values(formData).every(val => val)) {
       setIsSuccess(true);
       // Redirect to the success page
-      window.location.href = '/signup-success';
+      window.location.href = '/pop';
     } else {
       setIsSuccess(false);
     }
@@ -72,7 +72,7 @@ const SignUp = () => {
     // Add code to handle cancel logic here
     // For example, navigate back or close the sign-up form
   };
-  
+
   return (
     <div className="signup-container">
       <div className="close-button">
@@ -130,12 +130,13 @@ const SignUp = () => {
           <button onClick={handleSignUp} className="button" disabled={Object.values(errors).some(err => err) || Object.values(formData).some(val => !val)}>
             Sign Up
           </button>
+          <br /> 
+          <p>By signing up, you agree with the <Link to="/terms">Terms</Link> and <Link to="/terms">Conditions</Link></p>
         </div>
 
         {isSuccess && (
-         <Link to="/pop"> <SignUpPopUp onClose={handleClosePopUp} /></Link>
+          <Link to="/pop"> <SignUpPopUp onClose={handleClosePopUp} /></Link>
         )}
-        
 
         <Link to="/login">
           <button className="have-account-button">Already have an account?</button>

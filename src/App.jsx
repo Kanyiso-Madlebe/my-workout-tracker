@@ -19,6 +19,7 @@ function App() {
       <Route path="/" element={<Header />} /> 
       <Route path="/login" element={<Login/>}/>
       <Route path="/signup" element={<SignUp />} />
+      <Route path="/pop" element={<POP/>} />
       <Route path="/menu" element={<Menu />} />
       <Route path="/progress" element={<Progress />} />
       <Route path="/terms" element={<Terms />} />
@@ -26,7 +27,7 @@ function App() {
       <Route path="/faq" element={<FAQ/>} />
       <Route path="/history" element={<History/>} />
       <Route path="/otp" element={<OTP/>} />
-      <Route path="/pop" element={<POP/>} />
+      
     </Routes>
   </Router>
   );
