@@ -2,6 +2,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/signup.css';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -75,9 +78,9 @@ const SignUp = () => {
 
   return (
     <div className="signup-container">
-      <div className="close-button">
+      <div className="close-b">
         <Link to="/" style={{ color: '#000' }}>
-          <i className="fa fa-times" onClick={handleCancel}></i>
+          <FontAwesomeIcon icon={faArrowLeft} onClick={handleClosePopUp} />
         </Link>
       </div>
       <h2>Create an account</h2>

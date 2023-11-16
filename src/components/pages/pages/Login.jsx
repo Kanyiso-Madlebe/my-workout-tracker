@@ -66,7 +66,7 @@ function Login() {
     <div className="background-2">
       <div className="login-form">
         <div className="close-button">
-          {/* Adding the arrow icon */}
+          
           <Link to="/" style={{ color: '#000' }}>
             <FontAwesomeIcon icon={faArrowLeft} onClick={handleClose} />
           </Link>
