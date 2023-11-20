@@ -6,6 +6,7 @@ import { faFacebook, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { faArrowLeft, faTimes } from '@fortawesome/free-solid-svg-icons';
 import '../styles/login.css';
 import { createBrowserHistory } from 'history';
+import {auth} from '../../firebase';
 
 const history = createBrowserHistory();
 

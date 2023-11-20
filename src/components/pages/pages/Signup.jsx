@@ -5,6 +5,7 @@ import '../styles/signup.css';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faTimes } from '@fortawesome/free-solid-svg-icons';
+import {auth} from '../../firebase';
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
